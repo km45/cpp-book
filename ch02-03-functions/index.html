@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-02-primitive-types/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-03-functions/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.2. 基本型 - ゼロから学ぶ C++</title>
+        <title>2.3. 関数 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.2. 基本型
+              2.3. 関数
             </span>
           
         </div>
@@ -334,6 +334,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-nav__link">
+      2.2. 基本型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -345,11 +357,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.2. 基本型
+        2.3. 関数
       </label>
     
-    <a href="./" title="2.2. 基本型" class="md-nav__link md-nav__link--active">
-      2.2. 基本型
+    <a href="./" title="2.3. 関数" class="md-nav__link md-nav__link--active">
+      2.3. 関数
     </a>
     
       
@@ -363,56 +375,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bool" title="bool" class="md-nav__link">
-    bool
+  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
+    プロトタイプ宣言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#char" title="char" class="md-nav__link">
-    char
+  <a href="#main" title="main関数" class="md-nav__link">
+    main関数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="数値" class="md-nav__link">
-    数値
+  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
+    コマンドライン引数
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="整数型" class="md-nav__link">
-    整数型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="符号付き・符号なし整数型" class="md-nav__link">
-    符号付き・符号なし整数型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="サイズ指定付き整数型" class="md-nav__link">
-    サイズ指定付き整数型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="浮動小数点型" class="md-nav__link">
-    浮動小数点型
+  <a href="#_4" title="オーバーロード" class="md-nav__link">
+    オーバーロード
   </a>
   
 </li>
@@ -425,18 +410,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-03-functions/" title="2.3. 関数" class="md-nav__link">
-      2.3. 関数
-    </a>
   </li>
 
         
@@ -562,56 +535,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bool" title="bool" class="md-nav__link">
-    bool
+  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
+    プロトタイプ宣言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#char" title="char" class="md-nav__link">
-    char
+  <a href="#main" title="main関数" class="md-nav__link">
+    main関数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="数値" class="md-nav__link">
-    数値
+  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
+    コマンドライン引数
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="整数型" class="md-nav__link">
-    整数型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="符号付き・符号なし整数型" class="md-nav__link">
-    符号付き・符号なし整数型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="サイズ指定付き整数型" class="md-nav__link">
-    サイズ指定付き整数型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="浮動小数点型" class="md-nav__link">
-    浮動小数点型
+  <a href="#_4" title="オーバーロード" class="md-nav__link">
+    オーバーロード
   </a>
   
 </li>
@@ -632,76 +578,210 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-02-primitive-types.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-03-functions.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">基本型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>C++ ではじめから使用できる基本型について説明します。</p>
-<h2 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h2>
-<p><code>bool</code> は真偽値を表す型で <code>true</code> または <code>false</code> が設定できます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                <h1 id="_1">関数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>C++での関数の使用方法について説明します。</p>
+<p>関数<code>HelloWorld()</code>を作成し、<code>main()</code>から呼び出して利用する場合は次のようにします。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<p>ここで注目すべき点は、関数<code>HelloWorld()</code>が、呼び出されている10行目より上の行で記述されている点です。
+コンパイラはソースコードを上から順に解釈しているため、コンパイラに対して<code>HelloWorld()</code>が何者なのかを事前に教えることで、<code>HelloWorld()</code>の関数呼び出しが行なえるようになります。</p>
+<p>試しに<code>HelloWorld()</code>を<code>main()</code>よりも下の行に記述すると、コンパイルに失敗します。</p>
+<div class="admonition failure">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// ここでコンパイルエラー</span>
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<p>4行目の時点では、<code>HelloWorld()</code>が何者なのかコンパイラには理解できないためです。</p>
+<h2 id="_2">プロトタイプ宣言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>関数の宣言のみを呼び出し箇所よりも上の行に記述することで、関数の存在をコンパイラに教えることが出来ます。
+これをプロトタイプ宣言（前方宣言）と呼びます。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>  <span class="c1">// プロトタイプ宣言（前方宣言）</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<p><code>HelloWorld()</code>の本体は<code>main()</code>の呼び出し箇所よりも下に記述されていますが、プロトタイプ宣言があることで問題なくコンパイルできます。</p>
+<h2 id="main">main関数<a class="headerlink" href="#main" title="Permanent link">&para;</a></h2>
+<p>これまでのサンプルコードで度々現れた<code>main()</code>をmain関数と呼びます。</p>
+<p>C++で生成された実行ファイルを実行すると、main関数を起点に処理が進みます。</p>
+<h2 id="_3">コマンドライン引数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>main関数にも引数を渡すことが可能です。main関数に渡される引数をコマンドライン引数と呼びます。
+コマンドライン引数は、プログラム実行時に実行ファイル名に続けて半角スペース区切りで複数指定することが出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行ファイル名 &lt;引数1&gt; &lt;引数2&gt; &lt;引数3&gt; ...</span>
+$ ./a.exe XXX YYY ZZZ
 </pre></div>
 
-<h2 id="char">char<a class="headerlink" href="#char" title="Permanent link">&para;</a></h2>
-<p><code>char</code> はアスキー文字1文字を表現する型です。
-ただし内部表現はアスキーコードの整数値として扱われ、
-標準出力などに出力する際に文字に変換されて出力されます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="sc">&#39;x&#39;</span><span class="p">;</span>
+<p>コマンドライン引数を受け取る場合、main関数の引数は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[]);</span>
 </pre></div>
 
-<h2 id="_2">数値<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>数値を表現する型は複数種類用意されています。</p>
-<h3 id="_3">整数型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>整数を表現するための型です。</p>
 <ul>
-<li><code>char</code></li>
-<li><code>short</code></li>
-<li><code>int</code></li>
-<li><code>long</code></li>
+<li><code>int argc</code>: コマンドライン引数の個数を表す</li>
+<li><code>char* argv[]</code>: コマンドライン引数が格納される</li>
 </ul>
-<p>下に行くに連れて大きな値が表現できるようになり、変数のサイズも増大します。
-具体的なサイズはコンパイラによって変わってきますが
-GCC では 8, 16, 32, 64 ビットで定義されています。
-一般的には <code>int</code> が使用されます。</p>
-<h3 id="_4">符号付き・符号なし整数型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>各整数型に <code>unsigned</code> を付けると正の数しか表現できなくなる代わりに
-大きな値が表現できるようになります。</p>
-<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4000000000</span><span class="p">;</span>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;argv[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
+$ ./a.exe Hello World!
+argv<span class="o">[</span><span class="m">0</span><span class="o">]</span>: ./a.exe
+argv<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Hello
+argv<span class="o">[</span><span class="m">2</span><span class="o">]</span>: World!
 </pre></div>
 
-<p><code>signed</code> を付けると正負両方の値が表現できます。
-明示的に付けなくてもデフォルトは <code>signed</code> になります。</p>
-<h3 id="_5">サイズ指定付き整数型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>上述の整数型は型のサイズがコンパイラによってまちまちなので
-複数のコンパイラに対応するプログラムを書くときは
-移植性の面で問題が発生することがあります。
-そのようなときはサイズ指定付き整数型を使用します。</p>
-<ul>
-<li><code>int8_t</code></li>
-<li><code>int16_t</code></li>
-<li><code>int32_t</code></li>
-<li><code>int64_t</code></li>
-<li><code>uint8_t</code></li>
-<li><code>uint16_t</code></li>
-<li><code>uint32_t</code></li>
-<li><code>uint64_t</code></li>
-</ul>
-<p>数値は型のビットサイズを表しており、u は <code>unsigned</code> を表しています。
-サイズ指定付き整数型を使用する場合は <code>#include &lt;cstdint&gt;</code> と記述する必要があります。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cstdint&gt;</span><span class="cp"></span>
+<h2 id="_4">オーバーロード<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>関数の引数の個数や型が異なる場合、同じ名前の関数を定義することが出来ます。
+これを（関数の）オーバーロードと呼びます。引数の個数や型の情報を元に呼び出す関数を決定しています。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="kt">int32_t</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;int: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Print</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Print</span><span class="p">(</span><span class="mf">2.1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
+</td></tr></table>
 
-<h2 id="_6">浮動小数点型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>小数を表現する型は次の2つの型があります。</p>
-<ul>
-<li><code>float</code></li>
-<li><code>double</code></li>
-</ul>
-<p><code>float</code> は 32 ビットの大きさを持ち、<code>double</code> は 64 ビットの大きさを持ちます。
-また <code>double</code> の方が <code>float</code> に比べて計算精度が高いですが数値計算の
-パフォーマンスは低いです。</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
+$ ./a.exe
+int: <span class="m">2</span>
+double: <span class="m">2</span>.1
+</pre></div>
                 
                   
                 
@@ -722,7 +802,7 @@ GCC では 8, 16, 32, 64 ビットで定義されています。
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-01-variables/" title="2.1. 変数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -731,19 +811,19 @@ GCC では 8, 16, 32, 64 ビットで定義されています。
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.1. 変数
+                2.2. 基本型
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-03-functions/" title="2.3. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.3. 関数
+                2.4. ポインタ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
