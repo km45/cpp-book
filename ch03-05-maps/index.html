@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch03-02-strings/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch03-05-maps/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>3.2. 文字列 - ゼロから学ぶ C++</title>
+        <title>3.5. マップ - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              3.2. 文字列
+              3.5. マップ
             </span>
           
         </div>
@@ -430,20 +430,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="3.2. 文字列" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch03-02-strings/" title="3.2. 文字列" class="md-nav__link">
       3.2. 文字列
     </a>
-    
   </li>
 
         
@@ -475,11 +466,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch03-05-maps/" title="3.5. マップ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3.5. マップ
+      </label>
+    
+    <a href="./" title="3.5. マップ" class="md-nav__link md-nav__link--active">
       3.5. マップ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="要素追加" class="md-nav__link">
+    要素追加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="要素削除" class="md-nav__link">
+    要素削除
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdmap-stdunordered_map" title="std::map と std::unordered_map の違い" class="md-nav__link">
+    std::map と std::unordered_map の違い
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -505,6 +548,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="要素追加" class="md-nav__link">
+    要素追加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="要素削除" class="md-nav__link">
+    要素削除
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdmap-stdunordered_map" title="std::map と std::unordered_map の違い" class="md-nav__link">
+    std::map と std::unordered_map の違い
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -515,30 +588,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch03-02-strings.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch03-05-maps.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">文字列<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>文字列を扱うには <code>std::string</code> という型を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+                <h1 id="_1">マップ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>配列では要素参照のために何番目の要素と指定しますが、
+<code>std::map</code> または <code>std::unorderd_map</code> という型を使用すると
+何番目という指定の代わりに任意の型をキーとして指定できます。</p>
+<p>この機能は連想配列や辞書とも呼ばれます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;map&gt;</span><span class="cp"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 
-<p><code>std::string</code> は文字列データを <code>char</code> の配列として扱うため
-配列のように操作することができます。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 
-<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>   <span class="c1">// &#39;H&#39;</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>   <span class="c1">// &#39;e&#39;</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>   <span class="c1">// &#39;l&#39;</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>   <span class="c1">// &#39;l&#39;</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>   <span class="c1">// &#39;o&#39;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
 
-<p><code>s.size()</code> とすると文字列数を取得できます。</p>
-<div class="codehilite"><pre><span></span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>   <span class="c1">// 5</span>
+<p>要素参照は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="n">persons</span><span class="p">[</span><span class="s">&quot;Alice&quot;</span><span class="p">];</span>  <span class="c1">// 18</span>
+<span class="n">persons</span><span class="p">[</span><span class="s">&quot;Bob&quot;</span><span class="p">];</span>    <span class="c1">// 20</span>
 </pre></div>
+
+<h2 id="_2">要素追加<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>insert()</code> で要素を追加することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">persons</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&quot;Eve&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">});</span>
+</pre></div>
+
+<h2 id="_3">要素削除<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>erase()</code> で要素を削除することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">persons</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">);</span>
+</pre></div>
+
+<h2 id="stdmap-stdunordered_map"><code>std::map</code> と <code>std::unordered_map</code> の違い<a class="headerlink" href="#stdmap-stdunordered_map" title="Permanent link">&para;</a></h2>
+<p><code>std::map</code> はキーでソートしてデータを管理するのに対し、
+<code>std::unordered_map</code> はキーから計算するハッシュと呼ばれる値でデータを管理します。</p>
+<p>効率のよいハッシュ計算を行える場合には <code>std::unordered_map</code> の方が適しています。</p>
                 
                   
                 
@@ -559,7 +651,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch03-01-arrays/" title="3.1. 配列" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch03-04-vectors/" title="3.4. ベクタ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -568,25 +660,11 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                3.1. 配列
+                3.4. ベクタ
               </span>
             </div>
           </a>
         
-        
-          <a href="../ch03-03-tuples/" title="3.3. タプル" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  次
-                </span>
-                3.3. タプル
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
