@@ -317,6 +317,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gcc" title="GCC のインストール" class="md-nav__link">
+    GCC のインストール
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -560,6 +567,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gcc" title="GCC のインストール" class="md-nav__link">
+    GCC のインストール
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -632,8 +646,7 @@ Clang は近年注目されているコンパイラで、
 今後は GCC に取って代わる可能性があるコンパイラです。</p>
 <p>本書では Windows 版の GCC をインストールします。
 GCC のインストールには msys2 というツールを使用します。
-msys2 は Linux で使用できるコマンドの一部を Windows に移植したツールセットであり、
-msys2 の中には GCC も含まれています。</p>
+msys2 は Linux で使用できるコマンドの一部を Windows に移植したツールセットです。</p>
 <h3 id="msys2">msys2 のインストール<a class="headerlink" href="#msys2" title="Permanent link">&para;</a></h3>
 <p>下記の msys2 の公式ページにアクセスしてインストーラをダウンロードします。</p>
 <div class="codehilite"><pre><span></span>https://www.msys2.org/
@@ -642,6 +655,11 @@ msys2 の中には GCC も含まれています。</p>
 <p>インストーラは <code>msys2-i386-yyyymmdd.exe, msys2-x86_64-yyyymmdd.exe</code> の
 2 種類がありますが、前者が 32 ビット版で後者が 64 ビット版になります。
 本書では 64 ビット版をもとに説明するので、64 ビット版をインストールしてください。</p>
+<h3 id="gcc">GCC のインストール<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h3>
+<p>msys2 のターミナルを起動して下記コマンドを打ってインストールします。</p>
+<div class="codehilite"><pre><span></span>$ pacman -S gcc
+</pre></div>
+
 <h2 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h2>
 <p>C++ 用の IDE としては Visual Studio Code が人気です。
 Visual Studio Code 自体はエディタなのですが、拡張機能を入れることで
