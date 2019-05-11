@@ -61,12 +61,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch03-04-vectors/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch03-04-pairs/</loc>
      <lastmod>2019-05-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch03-05-maps/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch03-05-vectors/</loc>
+     <lastmod>2019-05-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch03-06-maps/</loc>
      <lastmod>2019-05-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
