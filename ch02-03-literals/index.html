@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-05-comments/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-03-literals/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.5. コメント - ゼロから学ぶ C++</title>
+        <title>2.3. リテラル - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.5. コメント
+              2.3. リテラル
             </span>
           
         </div>
@@ -346,30 +346,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../ch02-03-functions/" title="2.3. 関数" class="md-nav__link">
-      2.3. 関数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-nav__link">
-      2.4. ポインタ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -380,9 +356,38 @@
       
     
     
-    <a href="./" title="2.5. コメント" class="md-nav__link md-nav__link--active">
-      2.5. コメント
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        2.3. リテラル
+      </label>
+    
+    <a href="./" title="2.3. リテラル" class="md-nav__link md-nav__link--active">
+      2.3. リテラル
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="整数リテラル" class="md-nav__link">
+    整数リテラル
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -393,8 +398,56 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-06-control-flow/" title="2.6. 制御文" class="md-nav__link">
-      2.6. 制御文
+    <a href="../ch02-04-functions/" title="2.4. 関数" class="md-nav__link">
+      2.4. 関数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-05-pointers/" title="2.5. ポインタ" class="md-nav__link">
+      2.5. ポインタ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-06-comments/" title="2.6. コメント" class="md-nav__link">
+      2.6. コメント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-07-control-flow/" title="2.7. 制御文" class="md-nav__link">
+      2.7. 制御文
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-08-operators/" title="2.8. 演算子" class="md-nav__link">
+      2.8. 演算子
     </a>
   </li>
 
@@ -517,6 +570,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="整数リテラル" class="md-nav__link">
+    整数リテラル
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -527,30 +596,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-05-comments.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-03-literals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">コメント<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ソースコード内にコメントを書きたい場合は次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="c1">// &#39;//&#39; で始まる行はコメントと見なされます</span>
-
-<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-
-<span class="c1">// このように</span>
-<span class="c1">// 複数行にまたがって</span>
-<span class="c1">// コメントを書くこともできます</span>
+                <h1 id="_1">リテラル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>ソースコードの中に記述される定数値のことをリテラルといいます。</p>
+<p>本項では整数リテラルについて紹介します。他のリテラルについては <a href="https://ja.cppreference.com/w/cpp/language/expressions">式 - cppreference.com</a> を参照してください。</p>
+<h2 id="_2">整数リテラル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>数字の先頭に特定の文字を加えることで整数の基数を変えることが出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="mi">26</span>   <span class="c1">// 10進整数リテラル</span>
+<span class="mo">032</span>  <span class="c1">// 先頭に0を付けると8進整数リテラル</span>
+<span class="mh">0x1a</span> <span class="c1">// 先頭に0xを付けると16進整数リテラル</span>
+<span class="mh">0x1A</span> <span class="c1">// 16進整数リテラル内の文字は小文字でも大文字でも区別されないので0x1aと同じ</span>
 </pre></div>
 
-<p><code>/* ... */</code> で囲まれた行もコメントと見なされます。
-複数行にまたがるコメントを書く時に便利です。</p>
-<div class="codehilite"><pre><span></span><span class="cm">/*</span>
-<span class="cm"> * 間に現れる &#39;*&#39; は書かなくてもいいですが</span>
-<span class="cm"> * 習慣的に書くことのほうが多いです</span>
-<span class="cm"> */</span>
-</pre></div>
-
-<p><code>/* ... */</code> は入れ子にして使うことはできないので注意して下さい。</p>
-<div class="codehilite"><pre><span></span><span class="cm">/* /* これは不正なコメントです */</span> <span class="err">*/</span>
+<p>数字の末尾に文字を加えることで次のような型を表現できます。</p>
+<div class="codehilite"><pre><span></span><span class="mi">26u</span>    <span class="c1">// unsigned型の26</span>
+<span class="mi">26l</span>    <span class="c1">// long型の26</span>
+<span class="mi">26ul</span>   <span class="c1">// unsigned long型の26</span>
+<span class="mh">0x1Aul</span> <span class="c1">// unsigned long型の0x1A</span>
 </pre></div>
                 
                   
@@ -572,7 +636,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -581,19 +645,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.4. ポインタ
+                2.2. 基本型
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-06-control-flow/" title="2.6. 制御文" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch02-04-functions/" title="2.4. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.6. 制御文
+                2.4. 関数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

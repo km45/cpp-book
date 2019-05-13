@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-06-control-flow/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-04-functions/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.6. 制御文 - ゼロから学ぶ C++</title>
+        <title>2.4. 関数 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.6. 制御文
+              2.4. 関数
             </span>
           
         </div>
@@ -348,32 +348,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-03-functions/" title="2.3. 関数" class="md-nav__link">
-      2.3. 関数
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-nav__link">
-      2.4. ポインタ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-05-comments/" title="2.5. コメント" class="md-nav__link">
-      2.5. コメント
+    <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-nav__link">
+      2.3. リテラル
     </a>
   </li>
 
@@ -393,11 +369,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.6. 制御文
+        2.4. 関数
       </label>
     
-    <a href="./" title="2.6. 制御文" class="md-nav__link md-nav__link--active">
-      2.6. 制御文
+    <a href="./" title="2.4. 関数" class="md-nav__link md-nav__link--active">
+      2.4. 関数
     </a>
     
       
@@ -411,56 +387,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#if" title="if" class="md-nav__link">
-    if
+  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
+    プロトタイプ宣言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#switch" title="switch" class="md-nav__link">
-    switch
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="フォールスルー" class="md-nav__link">
-    フォールスルー
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#while" title="while" class="md-nav__link">
-    while
+  <a href="#main" title="main関数" class="md-nav__link">
+    main関数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#for" title="for" class="md-nav__link">
-    for
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="配列のループ" class="md-nav__link">
-    配列のループ
+  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
+    コマンドライン引数
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="オーバーロード" class="md-nav__link">
+    オーバーロード
+  </a>
   
 </li>
       
@@ -472,6 +422,54 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-05-pointers/" title="2.5. ポインタ" class="md-nav__link">
+      2.5. ポインタ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-06-comments/" title="2.6. コメント" class="md-nav__link">
+      2.6. コメント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-07-control-flow/" title="2.7. 制御文" class="md-nav__link">
+      2.7. 制御文
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-08-operators/" title="2.8. 演算子" class="md-nav__link">
+      2.8. 演算子
+    </a>
   </li>
 
         
@@ -597,56 +595,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#if" title="if" class="md-nav__link">
-    if
+  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
+    プロトタイプ宣言
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#switch" title="switch" class="md-nav__link">
-    switch
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="フォールスルー" class="md-nav__link">
-    フォールスルー
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#while" title="while" class="md-nav__link">
-    while
+  <a href="#main" title="main関数" class="md-nav__link">
+    main関数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#for" title="for" class="md-nav__link">
-    for
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="配列のループ" class="md-nav__link">
-    配列のループ
+  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
+    コマンドライン引数
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="オーバーロード" class="md-nav__link">
+    オーバーロード
+  </a>
   
 </li>
       
@@ -666,145 +638,209 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-06-control-flow.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-04-functions.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">制御文<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
-<p>条件分岐をしたい時には <code>if</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+                <h1 id="_1">関数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>C++での関数の使用方法について説明します。</p>
+<p>関数<code>HelloWorld()</code>を作成し、<code>main()</code>から呼び出して利用する場合は次のようにします。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
+<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+</td></tr></table>
 
-<p><code>if</code> の条件を満たさなかった場合に何か処理をしたければ <code>else</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</div>
+<p>ここで注目すべき点は、関数<code>HelloWorld()</code>が、呼び出されている10行目より上の行で記述されている点です。
+コンパイラはソースコードを上から順に解釈しているため、コンパイラに対して<code>HelloWorld()</code>が何者なのかを事前に教えることで、<code>HelloWorld()</code>の関数呼び出しが行なえるようになります。</p>
+<p>試しに<code>HelloWorld()</code>を<code>main()</code>よりも下の行に記述すると、コンパイルに失敗します。</p>
+<div class="admonition failure">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="p">...</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// ここでコンパイルエラー</span>
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
 
-<p>さらに別の条件で処理を分岐したければ <code>else if</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</pre></div>
-
-<h2 id="switch">switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h2>
-<p>一つの変数の値を調べながら分岐するような処理を書きたい場合は <code>switch</code> 文を使います。</p>
-<div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
-        <span class="c1">// x == 0 のときの処理</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-        <span class="c1">// x == 1 のときの処理</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="c1">// x がそれ以外のときの処理</span>
-        <span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>ただし <code>switch</code> 文が使用できるのは基本型のみです。
-上記の構文は <code>if</code> で書き直すと次と等価になります。</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// x == 0 のときの処理</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// x == 1 のときの処理</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// x がそれ以外のときの処理</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>ただし <code>switch</code> 文のほうが <code>if</code> よりも比較回数が少ないため効率的です。
-<code>if</code> はまずはじめに <code>x == 0</code> が <code>true</code> かどうかを調べ <code>false</code> であれば
-次に <code>x == 1</code> を評価しますが、<code>switch</code> 文はいきなり特定の <code>case</code> にジャンプします。</p>
-<h3 id="_2">フォールスルー<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>switch</code> の各 <code>case</code> 内に書かれている <code>break</code> は書かなくてもよいのですが、
-その場合振る舞いが変わります。</p>
-<div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
-        <span class="c1">// x == 0 のときの処理</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-        <span class="c1">// x == 1 のときの処理</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="c1">// x がそれ以外のときの処理</span>
-<span class="p">}</span>
-</pre></div>
-
-<p><code>break</code> を書いた場合は <code>switch</code> 文の処理はそこで終わりますが、
-<code>break</code> を書かなかった場合はそのまま下の <code>case</code> に処理が流れてしまいます。
-つまり上記のコードは <code>x == 0</code> であれば <code>case 0</code> 内の処理を行った後に
-<code>case 1</code> 内の処理を行い、最後に <code>default</code> の処理を行います。
-<code>x == 1</code> であれば同様の振る舞いが <code>case 1</code> から始まります。
-このような <code>switch</code> 文の仕様をフォールスルーと言います。
-これは <code>case 0</code> と <code>case 1</code> の処理が同じものになる場合に使用すると便利です。</p>
-<div class="codehilite"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-        <span class="c1">// x == 0 または x == 1 のときの処理</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="c1">// x がそれ以外のときの処理</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>それ以外のケースでフォールスルーをさせるシーンはまずないため、
-<code>break</code> を忘れずに付けておく必要があります。</p>
-<h2 id="while">while<a class="headerlink" href="#while" title="Permanent link">&para;</a></h2>
-<p><code>while</code> は <code>()</code> に渡された条件が <code>true</code> である限り
-<code>{ ... }</code> 内の処理を実行し続けます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">bool</span> <span class="n">done</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-
-<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">done</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">done</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</td></tr></table>
 
-<h2 id="for">for<a class="headerlink" href="#for" title="Permanent link">&para;</a></h2>
-<p><code>for</code> はループするたびに変化する変数を使うことができます。</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</div>
+<p>4行目の時点では、<code>HelloWorld()</code>が何者なのかコンパイラには理解できないためです。</p>
+<h2 id="_2">プロトタイプ宣言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>関数の宣言のみを呼び出し箇所よりも上の行に記述することで、関数の存在をコンパイラに教えることが出来ます。
+これをプロトタイプ宣言（前方宣言）と呼びます。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>  <span class="c1">// プロトタイプ宣言（前方宣言）</span>
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</td></tr></table>
 
-<p><code>i</code> はループするたびに <code>0, 1, 2, ..., 9</code> と値が変化し続けます。
-<code>for (int i = 0; i &lt; 10; ++i)</code> というのは <code>i</code> に <code>0</code> を設定して
-<code>i &lt; 10</code> を満たすまで <code>i</code> を <code>+1</code> しながらループを継続するという意味になります。</p>
-<h3 id="_3">配列のループ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>配列のループは <code>for</code> を使って次のように書くことができます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
-
-<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+</div>
+<p><code>HelloWorld()</code>の本体は<code>main()</code>の呼び出し箇所よりも下に記述されていますが、プロトタイプ宣言があることで問題なくコンパイルできます。</p>
+<h2 id="main">main関数<a class="headerlink" href="#main" title="Permanent link">&para;</a></h2>
+<p>これまでのサンプルコードで度々現れた<code>main()</code>をmain関数と呼びます。</p>
+<p>C++で生成された実行ファイルを実行すると、main関数を起点に処理が進みます。</p>
+<h2 id="_3">コマンドライン引数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>main関数にも引数を渡すことが可能です。main関数に渡される引数をコマンドライン引数と呼びます。
+コマンドライン引数は、プログラム実行時に実行ファイル名に続けて半角スペース区切りで複数指定することが出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行ファイル名 &lt;引数1&gt; &lt;引数2&gt; &lt;引数3&gt; ...</span>
+$ ./a.exe XXX YYY ZZZ
 </pre></div>
 
-<p><code>e</code> には 0 から 4 が順に代入されていきます。
-<code>std::array</code> でも同じように書くことができます。
-<code>for</code> の中で添字が必要な場合は添字をループして配列の要素をたどります。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+<p>コマンドライン引数を受け取る場合、main関数の引数は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[]);</span>
+</pre></div>
 
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<ul>
+<li><code>int argc</code>: コマンドライン引数の個数を表す</li>
+<li><code>char* argv[]</code>: コマンドライン引数が格納される</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;argv[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
+$ ./a.exe Hello World!
+argv<span class="o">[</span><span class="m">0</span><span class="o">]</span>: ./a.exe
+argv<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Hello
+argv<span class="o">[</span><span class="m">2</span><span class="o">]</span>: World!
+</pre></div>
+
+<h2 id="_4">オーバーロード<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>関数の引数の個数や型が異なる場合、同じ名前の関数を定義することが出来ます。
+これを（関数の）オーバーロードと呼びます。引数の個数や型の情報を元に呼び出す関数を決定しています。</p>
+<div class="admonition example">
+<p class="admonition-title">main.cc</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;int: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Print</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">Print</span><span class="p">(</span><span class="mf">2.1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+</div>
+<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
+$ ./a.exe
+int: <span class="m">2</span>
+double: <span class="m">2</span>.1
 </pre></div>
                 
                   
@@ -826,7 +862,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-05-comments/" title="2.5. コメント" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -835,19 +871,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.5. コメント
+                2.3. リテラル
               </span>
             </div>
           </a>
         
         
-          <a href="../ch03-01-arrays/" title="3.1. 配列" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch02-05-pointers/" title="2.5. ポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                3.1. 配列
+                2.5. ポインタ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
