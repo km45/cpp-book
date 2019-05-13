@@ -85,4 +85,39 @@
      <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-01-member-varialbes/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-02-member-functions/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-03-inheritance/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-04-polymorphism/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-05-constructors/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-06-destructors/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-07-structs/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
