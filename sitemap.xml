@@ -120,4 +120,14 @@
      <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch09-01-function-templates/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch09-02-class-templates/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>

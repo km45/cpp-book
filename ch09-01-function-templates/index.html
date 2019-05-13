@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-01-member-varialbes/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch09-01-function-templates/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>7.1. メンバ変数 - ゼロから学ぶ C++</title>
+        <title>9.1. 関数テンプレート - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              7.1. メンバ変数
+              9.1. 関数テンプレート
             </span>
           
         </div>
@@ -517,12 +517,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       7. クラス
@@ -538,20 +536,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="7.1. メンバ変数" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch07-01-member-varialbes/" title="7.1. メンバ変数" class="md-nav__link">
       7.1. メンバ変数
     </a>
-    
   </li>
 
         
@@ -636,10 +625,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       9. テンプレート
@@ -655,11 +646,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch09-01-function-templates/" title="9.1. 関数テンプレート" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        9.1. 関数テンプレート
+      </label>
+    
+    <a href="./" title="9.1. 関数テンプレート" class="md-nav__link md-nav__link--active">
       9.1. 関数テンプレート
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="テンプレート実引数の省略" class="md-nav__link">
+    テンプレート実引数の省略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="複数のテンプレート引数" class="md-nav__link">
+    複数のテンプレート引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="戻り値の型推論" class="md-nav__link">
+    戻り値の型推論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="コンパイル時に定まる値のパラメータ化" class="md-nav__link">
+    コンパイル時に定まる値のパラメータ化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -697,6 +747,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="テンプレート実引数の省略" class="md-nav__link">
+    テンプレート実引数の省略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="複数のテンプレート引数" class="md-nav__link">
+    複数のテンプレート引数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="戻り値の型推論" class="md-nav__link">
+    戻り値の型推論
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="コンパイル時に定まる値のパラメータ化" class="md-nav__link">
+    コンパイル時に定まる値のパラメータ化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -707,25 +794,83 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-01-member-varialbes.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch09-01-function-templates.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">メンバ変数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>クラスとは変数と関数を集約した型をつくるための仕組みです。</p>
-<p>クラスが持つ変数をメンバ変数といいます。</p>
-<p>長方形を扱う <code>Rectangle</code> クラスに
-<code>int</code> 型のメンバ変数 <code>height</code> と <code>width</code> を持たせるには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
-<span class="p">};</span>
+                <h1 id="_1">関数テンプレート<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>型やコンパイル時に定まる値をパラメータ化する機能をテンプレートといいます。
+型に依存せず処理を共通化するために使用されます。</p>
+<p>関数に対するテンプレートを関数テンプレートといいます。
+関数テンプレートを定義するには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
-<p>メンバ変数を参照するには <code>.</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<p>型をパラメータ化するには <code>typename</code> を使用します。
+この例では <code>T</code> という型で2つの引数と戻り値をパラメータ化しています。
+この関数テンプレートの関数を呼び出すには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="n">Sum</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>         <span class="c1">// 3</span>
+<span class="n">Sum</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">);</span>  <span class="c1">// 4.6</span>
+</pre></div>
+
+<p>関数呼び出し時に <code>&lt; ... &gt;</code> で <code>T</code> の型を指定します。</p>
+<h2 id="_2">テンプレート実引数の省略<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>実引数から型パラメータ <code>T</code> を推論できる場合には
+呼び出し時の <code>&lt; ... &gt;</code> を省略することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">Sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>      <span class="c1">// 3</span>
+<span class="n">Sum</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">);</span>  <span class="c1">// 4.6</span>
+</pre></div>
+
+<p>第1引数を <code>int</code> 、第2引数を <code>double</code> にすると <code>T</code> の型を推論できず、
+呼び出し時の <code>&lt; ... &gt;</code> を省略した場合コンパイルエラーになります。</p>
+<div class="codehilite"><pre><span></span><span class="n">Sum</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">);</span>  <span class="c1">// 3.3</span>
+<span class="c1">// Sum(1, 2.3);       // コンパイルエラー</span>
+</pre></div>
+
+<h2 id="_3">複数のテンプレート引数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>パラメータ化する型やコンパイル時に定まる値は
+1つだけではなく複数にすることができます。</p>
+<p>戻り値を <code>double</code> に固定して第1引数と第2引数を
+パラメータ化するには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
+<span class="kt">double</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">U</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>この場合には次の関数呼び出しもコンパイルエラーにはなりません。</p>
+<div class="codehilite"><pre><span></span><span class="n">Sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">);</span>  <span class="c1">// 3.3</span>
+</pre></div>
+
+<h2 id="_4">戻り値の型推論<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>パラメータ化した引数の型から戻り値の型を推論するには <code>decltype</code> を使用します。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
+<span class="k">auto</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">U</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">decltype</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_5">コンパイル時に定まる値のパラメータ化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>テンプレートでは型だけではなく
+コンパイル時に定まる値をパラメータ化することができます。
+コンパイル時に定まる値として配列のサイズなどを指定することができます。</p>
+<div class="codehilite"><pre><span></span><span class="hll"><span class="k">template</span> <span class="o">&lt;</span><span class="kt">int</span> <span class="n">N</span><span class="o">&gt;</span>
+</span><span class="kt">int</span> <span class="n">Fibonacchi</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span>    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>この例は <a href="https://ja.wikipedia.org/wiki/フィボナッチ数">フィボナッチ数</a> を計算する処理です。
+次のように呼び出すことで値を計算することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">Fibonacchi</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// 55</span>
 </pre></div>
                 
                   
@@ -747,7 +892,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch03-06-maps/" title="3.6. マップ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch07-07-structs/" title="7.7. 構造体" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -756,19 +901,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                3.6. マップ
+                7.7. 構造体
               </span>
             </div>
           </a>
         
         
-          <a href="../ch07-02-member-functions/" title="7.2. メンバ関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch09-02-class-templates/" title="9.2. クラステンプレート" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                7.2. メンバ関数
+                9.2. クラステンプレート
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
