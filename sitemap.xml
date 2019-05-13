@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://rinatz.github.io/cpp-book/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch01-01-installation/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch01-02-hello-world/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-01-variables/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-02-primitive-types/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-03-literals/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-04-functions/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-05-pointers/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-06-comments/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-07-control-flow/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch02-08-operators/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-01-arrays/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-02-strings/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-03-tuples/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-04-pairs/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-05-vectors/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://rinatz.github.io/cpp-book/ch03-06-maps/</loc>
-     <lastmod>2019-05-13</lastmod>
+     <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
