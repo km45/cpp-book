@@ -96,6 +96,31 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://rinatz.github.io/cpp-book/ch06-01-memory-areas/</loc>
+     <lastmod>2019-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch06-02-new-and-delete/</loc>
+     <lastmod>2019-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch06-03-deep-and-shallow-copy/</loc>
+     <lastmod>2019-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch06-04-move-semantics/</loc>
+     <lastmod>2019-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch06-05-smart-pointers/</loc>
+     <lastmod>2019-05-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://rinatz.github.io/cpp-book/ch07-01-member-varialbes/</loc>
      <lastmod>2019-05-30</lastmod>
      <changefreq>daily</changefreq>

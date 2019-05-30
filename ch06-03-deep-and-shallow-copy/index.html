@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-03-literals/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch06-03-deep-and-shallow-copy/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.3. リテラル - ゼロから学ぶ C++</title>
+        <title>6.3. ディープコピーとシャローコピー - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.3. リテラル
+              6.3. ディープコピーとシャローコピー
             </span>
           
         </div>
@@ -301,12 +301,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       2. 基本構文
@@ -346,49 +344,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.3. リテラル
-      </label>
-    
-    <a href="./" title="2.3. リテラル" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-nav__link">
       2.3. リテラル
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -629,10 +589,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       6. メモリの管理
@@ -672,11 +634,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch06-03-deep-and-shallow-copy/" title="6.3. ディープコピーとシャローコピー" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        6.3. ディープコピーとシャローコピー
+      </label>
+    
+    <a href="./" title="6.3. ディープコピーとシャローコピー" class="md-nav__link md-nav__link--active">
       6.3. ディープコピーとシャローコピー
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="ディープコピー" class="md-nav__link">
+    ディープコピー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="シャローコピー" class="md-nav__link">
+    シャローコピー
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -886,8 +893,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
+  <a href="#_2" title="ディープコピー" class="md-nav__link">
+    ディープコピー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="シャローコピー" class="md-nav__link">
+    シャローコピー
   </a>
   
 </li>
@@ -908,26 +922,47 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-03-literals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch06-03-deep-and-shallow-copy.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">リテラル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ソースコードの中に記述される定数値のことをリテラルといいます。</p>
-<p>本項では整数リテラルについて紹介します。他のリテラルについては <a href="https://ja.cppreference.com/w/cpp/language/expressions">式 - cppreference.com</a> を参照してください。</p>
-<h2 id="_2">整数リテラル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>数字の先頭に特定の文字を加えることで整数の基数を変えることが出来ます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26</span>   <span class="c1">// 10進整数リテラル</span>
-<span class="mo">032</span>  <span class="c1">// 先頭に0を付けると8進整数リテラル</span>
-<span class="mh">0x1a</span> <span class="c1">// 先頭に0xを付けると16進整数リテラル</span>
-<span class="mh">0x1A</span> <span class="c1">// 16進整数リテラル内の文字は小文字でも大文字でも区別されないので0x1aと同じ</span>
+                <h1 id="_1">ディープコピーとシャローコピー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">ディープコピー<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>C++ のコピーは基本的にはディープコピーと呼ばれるものです。</p>
+<p>ディープコピーは実体ごとコピーされるため、コピーした分のメモリ領域の確保が必要になります。
+ディープコピーの場合、コピー先（or コピー元）のオブジェクトを編集しても、他方のオブジェクトには影響を及ぼしません。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// x を y へディープコピー（図1）</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// y を 50 に書き換える（図2）</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// x は100のまま</span>
 </pre></div>
 
-<p>数字の末尾に文字を加えることで次のような型を表現できます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26u</span>    <span class="c1">// unsigned型の26</span>
-<span class="mi">26l</span>    <span class="c1">// long型の26</span>
-<span class="mi">26ul</span>   <span class="c1">// unsigned long型の26</span>
-<span class="mh">0x1Aul</span> <span class="c1">// unsigned long型の0x1A</span>
+<div class="admonition info">
+<p class="admonition-title">図1</p>
+<p><img alt="図1" src="../img/deep_copy_a.svg" /></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">図2</p>
+<p><img alt="図1" src="../img/deep_copy_b.svg" /></p>
+</div>
+<h2 id="_3">シャローコピー<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>ポインタをコピーする場合はシャローコピーになります。</p>
+<p>シャローコピーではポインタの向き先だけがコピーされ、実体はコピー元の領域のままなので、
+ディープコピーのようなコピーした分のメモリの確保は起きません。</p>
+<p>参照の場合も、ポインタと同様にシャローコピーになります。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// x を y へシャローコピー（図3）</span>
+<span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// y が指す先の値を 50 に書き換える（図4）</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// x が指す先の値も 50 になる</span>
 </pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">図3</p>
+<p><img alt="図3" src="../img/shallow_copy_a.svg" /></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">図4</p>
+<p><img alt="図4" src="../img/shallow_copy_b.svg" /></p>
+</div>
                 
                   
                 
@@ -948,7 +983,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch06-02-new-and-delete/" title="6.2. new/delete" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -957,19 +992,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.2. 基本型
+                6.2. new/delete
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-04-functions/" title="2.4. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch06-04-move-semantics/" title="6.4. ムーブセマンティクス" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.4. 関数
+                6.4. ムーブセマンティクス
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

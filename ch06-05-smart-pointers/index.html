@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-03-literals/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch06-05-smart-pointers/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.3. リテラル - ゼロから学ぶ C++</title>
+        <title>6.5. スマートポインタ - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.3. リテラル
+              6.5. スマートポインタ
             </span>
           
         </div>
@@ -301,12 +301,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       2. 基本構文
@@ -346,49 +344,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.3. リテラル
-      </label>
-    
-    <a href="./" title="2.3. リテラル" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-nav__link">
       2.3. リテラル
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -629,10 +589,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       6. メモリの管理
@@ -696,11 +658,77 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch06-05-smart-pointers/" title="6.5. スマートポインタ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        6.5. スマートポインタ
+      </label>
+    
+    <a href="./" title="6.5. スマートポインタ" class="md-nav__link md-nav__link--active">
       6.5. スマートポインタ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="リソースの所有権" class="md-nav__link">
+    リソースの所有権
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdshared_ptr" title="std::shared_ptr" class="md-nav__link">
+    std::shared_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdweak_ptr" title="std::weak_ptr" class="md-nav__link">
+    std::weak_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdunique_ptr" title="std::unique_ptr" class="md-nav__link">
+    std::unique_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdauto_ptr" title="std::auto_ptr" class="md-nav__link">
+    std::auto_ptr
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -886,8 +914,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
+  <a href="#_2" title="リソースの所有権" class="md-nav__link">
+    リソースの所有権
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdshared_ptr" title="std::shared_ptr" class="md-nav__link">
+    std::shared_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdweak_ptr" title="std::weak_ptr" class="md-nav__link">
+    std::weak_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdunique_ptr" title="std::unique_ptr" class="md-nav__link">
+    std::unique_ptr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdauto_ptr" title="std::auto_ptr" class="md-nav__link">
+    std::auto_ptr
   </a>
   
 </li>
@@ -908,26 +964,105 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-03-literals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch06-05-smart-pointers.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">リテラル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ソースコードの中に記述される定数値のことをリテラルといいます。</p>
-<p>本項では整数リテラルについて紹介します。他のリテラルについては <a href="https://ja.cppreference.com/w/cpp/language/expressions">式 - cppreference.com</a> を参照してください。</p>
-<h2 id="_2">整数リテラル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>数字の先頭に特定の文字を加えることで整数の基数を変えることが出来ます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26</span>   <span class="c1">// 10進整数リテラル</span>
-<span class="mo">032</span>  <span class="c1">// 先頭に0を付けると8進整数リテラル</span>
-<span class="mh">0x1a</span> <span class="c1">// 先頭に0xを付けると16進整数リテラル</span>
-<span class="mh">0x1A</span> <span class="c1">// 16進整数リテラル内の文字は小文字でも大文字でも区別されないので0x1aと同じ</span>
+                <h1 id="_1">スマートポインタ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">リソースの所有権<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>ポインタはコピー可能なため、ポインタが指す先のリソースを複数のオブジェクトから参照することが可能です。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// b からも a と同じリソースを参照できるようにする。</span>
+
+    <span class="c1">// a と b のどちらを delete するべきか？</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
-<p>数字の末尾に文字を加えることで次のような型を表現できます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26u</span>    <span class="c1">// unsigned型の26</span>
-<span class="mi">26l</span>    <span class="c1">// long型の26</span>
-<span class="mi">26ul</span>   <span class="c1">// unsigned long型の26</span>
-<span class="mh">0x1Aul</span> <span class="c1">// unsigned long型の0x1A</span>
+<p>動的確保したリソースを扱う場合、
+誤って <code>delete</code> を忘れたり、同じリソースを複数回 <code>delete</code> したりすることを防ぐために、
+どの変数がリソースの所有権（リソースを参照する権利と開放する権利）を持つのかをプログラマが細心の注意を払ってコードを書く必要があります。</p>
+<p>このようなポインタを扱う上での危険性や負担を下げるために、 C++ ではスマートポインタという仕組みが存在します。</p>
+<p>スマートポインタは <code>&lt;memory&gt;</code> ヘッダにて提供されています。</p>
+<h2 id="stdshared_ptr">std::shared_ptr<a class="headerlink" href="#stdshared_ptr" title="Permanent link">&para;</a></h2>
+<p><code>std::shared_ptr</code> は動的確保したリソースの所有権を共有することができるスマートポインタです。
+内部で所有権を持つオブジェクトの一覧を管理し、所有者がいなくなった時に自動的に <code>delete</code> する仕組みを有しています。</p>
+<p><code>std::shared_ptr</code> オブジェクトを生成するには、 <code>std::make_shared</code> を利用します。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// int* x = new int(100); の代わり</span>
+                                                         <span class="c1">// 所有者は1人。</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// 通常のポインタ同様、コピーすることで所有権が共有される</span>
+                                    <span class="c1">// 所有者が2人に増える。</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="c1">// y が破棄されて所有者が1人になる。</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">// 所有者が0人になるので、 x のデストラクタで自動的に delete が行われる。</span>
 </pre></div>
+
+<h2 id="stdweak_ptr">std::weak_ptr<a class="headerlink" href="#stdweak_ptr" title="Permanent link">&para;</a></h2>
+<p><code>std::shared_ptr</code> のリソースの所有権を持つことなく、
+そのリソースを監視する（弱参照）ことが出来るスマートポインタとして <code>std::weak_ptr</code> があります。
+<code>lock()</code> を使うことで、監視している <code>std::shared_ptr</code> のリソースが有効な場合、
+監視先とリソースを共有する <code>std::shared_ptr</code> が取得できます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">246</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">wp</span> <span class="o">=</span> <span class="n">sp</span><span class="p">;</span> <span class="c1">// sp を監視対象として wp に登録する</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sp2</span> <span class="o">=</span> <span class="n">wp</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span> <span class="c1">// 有効な場合は sp とリソースを共有する sp2 が作られる</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sp2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">sp2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;リソースは解放済み&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="stdunique_ptr">std::unique_ptr<a class="headerlink" href="#stdunique_ptr" title="Permanent link">&para;</a></h2>
+<p><code>std::unique_ptr</code> は、 <code>std::shared_ptr</code> と違い、コピーが出来ません。
+そのため、確保したリソースの所有者が常に1人になります。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+    <span class="c1">// std::unique_ptr&lt;int&gt; y = x; // コピー出来ない。コンパイルエラー。</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">// x が所有しているリソースが解放される。</span>
+</pre></div>
+
+<p>所有権の共有はできませんが、<code>std::move</code> を使うことで所有権の移動は出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">));</span> <span class="c1">// ムーブは出来るため、所有権の移動は可能。</span>
+                                          <span class="c1">// 所有権を移動したため、x は何も所有していない。</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">// y が所有しているリソースが解放される。</span>
+</pre></div>
+
+<h2 id="stdauto_ptr">std::auto_ptr<a class="headerlink" href="#stdauto_ptr" title="Permanent link">&para;</a></h2>
+<p><code>std::auto_ptr</code> は C++11 では非推奨となっており C++17 では削除されているため使用しないでください。</p>
+<p>詳細は <a href="https://ja.cppreference.com/w/cpp/memory/auto_ptr">std::auto_ptr - cppreference.com</a> を参照してください。</p>
                 
                   
                 
@@ -948,7 +1083,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch06-04-move-semantics/" title="6.4. ムーブセマンティクス" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -957,19 +1092,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.2. 基本型
+                6.4. ムーブセマンティクス
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-04-functions/" title="2.4. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch07-01-member-varialbes/" title="7.1. メンバ変数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.4. 関数
+                7.1. メンバ変数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

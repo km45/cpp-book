@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-03-literals/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch06-01-memory-areas/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.3. リテラル - ゼロから学ぶ C++</title>
+        <title>6.1. メモリ領域 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.3. リテラル
+              6.1. メモリ領域
             </span>
           
         </div>
@@ -301,12 +301,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       2. 基本構文
@@ -346,49 +344,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.3. リテラル
-      </label>
-    
-    <a href="./" title="2.3. リテラル" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-nav__link">
       2.3. リテラル
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -629,10 +589,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       6. メモリの管理
@@ -648,11 +610,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch06-01-memory-areas/" title="6.1. メモリ領域" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        6.1. メモリ領域
+      </label>
+    
+    <a href="./" title="6.1. メモリ領域" class="md-nav__link md-nav__link--active">
       6.1. メモリ領域
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="スタック" class="md-nav__link">
+    スタック
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="ヒープ" class="md-nav__link">
+    ヒープ
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -886,8 +893,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="整数リテラル" class="md-nav__link">
-    整数リテラル
+  <a href="#_2" title="スタック" class="md-nav__link">
+    スタック
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="ヒープ" class="md-nav__link">
+    ヒープ
   </a>
   
 </li>
@@ -908,26 +922,32 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-03-literals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch06-01-memory-areas.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">リテラル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ソースコードの中に記述される定数値のことをリテラルといいます。</p>
-<p>本項では整数リテラルについて紹介します。他のリテラルについては <a href="https://ja.cppreference.com/w/cpp/language/expressions">式 - cppreference.com</a> を参照してください。</p>
-<h2 id="_2">整数リテラル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>数字の先頭に特定の文字を加えることで整数の基数を変えることが出来ます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26</span>   <span class="c1">// 10進整数リテラル</span>
-<span class="mo">032</span>  <span class="c1">// 先頭に0を付けると8進整数リテラル</span>
-<span class="mh">0x1a</span> <span class="c1">// 先頭に0xを付けると16進整数リテラル</span>
-<span class="mh">0x1A</span> <span class="c1">// 16進整数リテラル内の文字は小文字でも大文字でも区別されないので0x1aと同じ</span>
+                <h1 id="_1">メモリ領域<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>プログラムが利用するメモリには様々な領域が存在します。ここでは、スタックとヒープについて紹介します。</p>
+<h2 id="_2">スタック<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>スタックはデータ構造上、ヒープに比べて高速に扱えます。スタックへのメモリの確保と解放はコンパイラ・OSが自動的に行います。</p>
+<p>代わりに、使用できるスタックには限りがあるので、大きなデータを取り扱うのには向いていません。
+また、スタックのサイズはプログラムのコンパイル・リンク時に決定しているので、実行前にメモリの確保期間が分かっているものに利用は限られます。</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// ローカル変数xはスタックに確保される。</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="c1">// ローカル変数yはスタックに確保される。</span>
+
+<span class="p">}</span> <span class="c1">// 関数の終了とともに変数 x, y はスタックから取り除かれる。</span>
+  <span class="c1">// スタックはLIFO（後入れ先出し）形式のため y, x の順で取り除かれる。</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Function</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
-<p>数字の末尾に文字を加えることで次のような型を表現できます。</p>
-<div class="codehilite"><pre><span></span><span class="mi">26u</span>    <span class="c1">// unsigned型の26</span>
-<span class="mi">26l</span>    <span class="c1">// long型の26</span>
-<span class="mi">26ul</span>   <span class="c1">// unsigned long型の26</span>
-<span class="mh">0x1Aul</span> <span class="c1">// unsigned long型の0x1A</span>
-</pre></div>
+<h2 id="_3">ヒープ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>ヒープのサイズはプログラム実行時に動的に変化します。ヒープはスタックのような制限がなく自由度が高いですが、アプリケーション側でメモリの確保と解放を行う必要があります。</p>
+<p>メモリの確保期間が明確でない場合や、実行時にサイズが確定するようなものについてはヒープを利用します。例えば、 <code>std::vector</code> は、保持する要素をヒープ上に確保することで、要素数を実行時に変更できるという仕組みを実現しています。</p>
                 
                   
                 
@@ -948,7 +968,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-02-primitive-types/" title="2.2. 基本型" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -957,19 +977,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.2. 基本型
+                5.1. 標準入出力
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-04-functions/" title="2.4. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch06-02-new-and-delete/" title="6.2. new/delete" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.4. 関数
+                6.2. new/delete
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
