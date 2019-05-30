@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-01-member-varialbes/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch05-01-standard-inout/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>7.1. メンバ変数 - ゼロから学ぶ C++</title>
+        <title>5.1. 標準入出力 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              7.1. メンバ変数
+              5.1. 標準入出力
             </span>
           
         </div>
@@ -553,10 +553,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       5. ストリーム操作
@@ -564,44 +566,6 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
         5. ストリーム操作
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-nav__link">
-      5.1. 標準入出力
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
-    
-    <label class="md-nav__link" for="nav-7">
-      7. クラス
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        7. クラス
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -620,10 +584,89 @@
       
     
     
-    <a href="./" title="7.1. メンバ変数" class="md-nav__link md-nav__link--active">
-      7.1. メンバ変数
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.1. 標準入出力
+      </label>
+    
+    <a href="./" title="5.1. 標準入出力" class="md-nav__link md-nav__link--active">
+      5.1. 標準入出力
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="標準出力" class="md-nav__link">
+    標準出力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="標準エラー出力" class="md-nav__link">
+    標準エラー出力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="標準入力" class="md-nav__link">
+    標準入力
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      7. クラス
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        7. クラス
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch07-01-member-varialbes/" title="7.1. メンバ変数" class="md-nav__link">
+      7.1. メンバ変数
+    </a>
   </li>
 
         
@@ -769,6 +812,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="標準出力" class="md-nav__link">
+    標準出力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="標準エラー出力" class="md-nav__link">
+    標準エラー出力
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="標準入力" class="md-nav__link">
+    標準入力
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -779,25 +852,72 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-01-member-varialbes.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch05-01-standard-inout.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">メンバ変数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>クラスとは変数と関数を集約した型をつくるための仕組みです。</p>
-<p>クラスが持つ変数をメンバ変数といいます。</p>
-<p>長方形を扱う <code>Rectangle</code> クラスに
-<code>int</code> 型のメンバ変数 <code>height</code> と <code>width</code> を持たせるには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
-<span class="p">};</span>
+                <h1 id="_1">標準入出力<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>C++ で入出力を扱う場合は <code>&lt;iostream&gt;</code> ヘッダをインクルードする必要があります。</p>
+<h2 id="_2">標準出力<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>std::cout</code> で標準出力に対して出力します。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;標準出力&quot;</span><span class="p">;</span>
 </pre></div>
 
-<p>メンバ変数を参照するには <code>.</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>std::endl</code> で改行を出力します。
+<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="c1"># 出力結果</span>
+<span class="m">3</span>
+<span class="m">7</span>
+</pre></div></p>
+</div>
+<h2 id="_3">標準エラー出力<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>std::cerr</code> で標準エラー出力に対して出力します。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;標準エラー出力&quot;</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="_4">標準入力<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><code>std::cin</code> で標準入力に対して入力します。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;好きな食べ物を入力してください: &quot;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">food</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">food</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;好きな食べ物は &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">food</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; です。&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+
+<p><code>int</code> などの数値型を用意することで数値の入力を読み込むことも可能です。</p>
+<p>また、読み込み成否をif文で判定することが可能です。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;整数を入力してください: &quot;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;入力した整数は &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; です。&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;不正な入力です。&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># 実行例1</span>
+整数を入力してください: <span class="m">3</span>
+入力した整数は <span class="m">3</span> です。
+
+<span class="c1"># 実行例2</span>
+整数を入力してください: カレー
+不正な入力です。
 </pre></div>
                 
                   
@@ -819,7 +939,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch04-01-multiple-files/" title="4.1. 複数ファイル" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -828,19 +948,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                5.1. 標準入出力
+                4.1. 複数ファイル
               </span>
             </div>
           </a>
         
         
-          <a href="../ch07-02-member-functions/" title="7.2. メンバ関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch07-01-member-varialbes/" title="7.1. メンバ変数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                7.2. メンバ関数
+                7.1. メンバ変数
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
