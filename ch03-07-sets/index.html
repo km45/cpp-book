@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch06-04-move-semantics/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch03-07-sets/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>6.4. ムーブセマンティクス - ゼロから学ぶ C++</title>
+        <title>3.7. セット - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              6.4. ムーブセマンティクス
+              3.7. セット
             </span>
           
         </div>
@@ -421,10 +421,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       3. コンテナ
@@ -512,11 +514,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch03-07-sets/" title="3.7. セット" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3.7. セット
+      </label>
+    
+    <a href="./" title="3.7. セット" class="md-nav__link md-nav__link--active">
       3.7. セット
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="要素追加" class="md-nav__link">
+    要素追加
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="要素削除" class="md-nav__link">
+    要素削除
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdset-stdunordered_set" title="std::set と std::unordered_set の違い" class="md-nav__link">
+    std::set と std::unordered_set の違い
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -601,12 +655,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       6. メモリの管理
@@ -658,63 +710,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        6.4. ムーブセマンティクス
-      </label>
-    
-    <a href="./" title="6.4. ムーブセマンティクス" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch06-04-move-semantics/" title="6.4. ムーブセマンティクス" class="md-nav__link">
       6.4. ムーブセマンティクス
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="コピーとムーブ" class="md-nav__link">
-    コピーとムーブ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="右辺値と左辺値" class="md-nav__link">
-    右辺値と左辺値
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdmove" title="std::move" class="md-nav__link">
-    std::move
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -960,22 +960,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="コピーとムーブ" class="md-nav__link">
-    コピーとムーブ
+  <a href="#_2" title="要素追加" class="md-nav__link">
+    要素追加
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="右辺値と左辺値" class="md-nav__link">
-    右辺値と左辺値
+  <a href="#_3" title="要素削除" class="md-nav__link">
+    要素削除
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#stdmove" title="std::move" class="md-nav__link">
-    std::move
+  <a href="#stdset-stdunordered_set" title="std::set と std::unordered_set の違い" class="md-nav__link">
+    std::set と std::unordered_set の違い
   </a>
   
 </li>
@@ -996,60 +996,42 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch06-04-move-semantics.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch03-07-sets.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">ムーブセマンティクス<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">コピーとムーブ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// ディープコピー</span>
+                <h1 id="_1">セット<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>std::set</code> または <code>std::unordered_set</code> という型を使用すると
+任意の型の集合を扱うことができます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;set&gt;</span><span class="cp"></span>
 
-<span class="c1">// 以降 x は利用しない</span>
+<span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s">&quot;Bob&quot;</span>
+<span class="p">};</span>
 </pre></div>
 
-<p>この例の場合、<code>y</code> を生成するために <code>x</code> と同程度のメモリ領域を確保する必要があります。
-これはコストの面ではかなりの無駄があります。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// シャローコピー</span>
-<span class="n">x</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;unordered_set&gt;</span><span class="cp"></span>
 
-<span class="c1">// 以降 x は利用しない</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">persons</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s">&quot;Bob&quot;</span>
+<span class="p">};</span>
 </pre></div>
 
-<p>この例では <code>x</code> を <code>y</code> にシャローコピーした後に、 <code>x</code> に <code>nullptr</code> を代入しています。</p>
-<p>これがムーブの根底にある考え方で、
-ポインタの付け替えだけで、あたかも <code>x</code> が <code>y</code> に移動しているような挙動を実現出来ているため、
-ディープコピーのときよりもコストの面で有利です。</p>
-<p>しかし、ポインタの操作を伴う実装になるため、プログラマが細心の注意を払って実装しないと、
-ムーブの仕組みが実現できなくなるというリスクも存在します。</p>
-<p>そこで、 C++11からはムーブの考え方をテクニックとしてでは無く、言語仕様として実現する仕組みが取り入れられました。</p>
-<h2 id="_3">右辺値と左辺値<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>左辺値: 基本的にそのスコープの間生き続ける名前付きのオブジェクト</li>
-<li>右辺値: リテラルや関数が返す一時オブジェクトのようなその瞬間に破棄されて不要になるもの</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span> <span class="c1">// x は左辺値。300 のようなリテラルは右辺値。</span>
-<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">function</span><span class="p">();</span> <span class="c1">// y は左辺値。関数 function が返す一時オブジェクトは右辺値。</span>
-<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// z と x は左辺値。</span>
+<h2 id="_2">要素追加<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>insert()</code> で要素を追加することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">persons</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;Eve&quot;</span><span class="p">);</span>
 </pre></div>
 
-<p>右辺値は左辺値へ格納したら必要無くなるので、右辺値にはムーブの考え方が適用できることがわかります。
-C++11 以降、コンパイラはこの考え方を認識し、ムーブを実現してくれるようになりました。</p>
-<h2 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="Permanent link">&para;</a></h2>
-<p>次の例では、<code>x</code> はコンパイラからしてみると左辺値なので、<code>y</code> への代入時にディープコピーされます。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// y と x は左辺値</span>
-
-<span class="c1">// 以降 x は利用しない</span>
+<h2 id="_3">要素削除<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>erase()</code> で要素を削除することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">persons</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">);</span>
 </pre></div>
 
-<p>そこで、左辺値を右辺値にキャストする <code>std::move</code> を使います。
-<code>x</code> を右辺値にキャストすることで、ディープコピーではなくムーブができるようになります。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">// std::move で x を右辺値にキャスト</span>
-
-<span class="c1">// 以降、xは利用しない</span>
-</pre></div>
+<h2 id="stdset-stdunordered_set">std::set と std::unordered_set の違い<a class="headerlink" href="#stdset-stdunordered_set" title="Permanent link">&para;</a></h2>
+<p><code>std::set</code> はキーでソートしてデータを管理するのに対し、
+<code>std::unordered_set</code> はキーから計算するハッシュと呼ばれる値でデータを管理します。</p>
+<p>効率のよいハッシュ計算を行える場合には <code>std::unordered_set</code> の方が適しています。</p>
                 
                   
                 
@@ -1070,7 +1052,7 @@ C++11 以降、コンパイラはこの考え方を認識し、ムーブを実�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch06-03-deep-and-shallow-copy/" title="6.3. ディープコピーとシャローコピー" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch03-06-maps/" title="3.6. マップ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1079,19 +1061,19 @@ C++11 以降、コンパイラはこの考え方を認識し、ムーブを実�
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                6.3. ディープコピーとシャローコピー
+                3.6. マップ
               </span>
             </div>
           </a>
         
         
-          <a href="../ch06-05-smart-pointers/" title="6.5. スマートポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch04-01-multiple-files/" title="4.1. 複数ファイル" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                6.5. スマートポインタ
+                4.1. 複数ファイル
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
