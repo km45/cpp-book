@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-02-member-functions/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch10-02-signals/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>7.2. メンバ関数 - ゼロから学ぶ C++</title>
+        <title>10.2 シグナル - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              7.2. メンバ関数
+              10.2 シグナル
             </span>
           
         </div>
@@ -697,12 +697,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       7. クラス
@@ -730,56 +728,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        7.2. メンバ関数
-      </label>
-    
-    <a href="./" title="7.2. メンバ関数" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch07-02-member-functions/" title="7.2. メンバ関数" class="md-nav__link">
       7.2. メンバ関数
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="クラス宣言とは別に定義" class="md-nav__link">
-    クラス宣言とは別に定義
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#const" title="const メンバ関数" class="md-nav__link">
-    const メンバ関数
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -948,10 +901,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       10. エラー処理
@@ -979,11 +934,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch10-02-signals/" title="10.2 シグナル" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10.2 シグナル
+      </label>
+    
+    <a href="./" title="10.2 シグナル" class="md-nav__link md-nav__link--active">
       10.2 シグナル
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sigabrt" title="SIGABRT" class="md-nav__link">
+    SIGABRT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sigfpe" title="SIGFPE" class="md-nav__link">
+    SIGFPE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sigsegv" title="SIGSEGV" class="md-nav__link">
+    SIGSEGV
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1013,15 +1020,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="クラス宣言とは別に定義" class="md-nav__link">
-    クラス宣言とは別に定義
+  <a href="#sigabrt" title="SIGABRT" class="md-nav__link">
+    SIGABRT
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#const" title="const メンバ関数" class="md-nav__link">
-    const メンバ関数
+  <a href="#sigfpe" title="SIGFPE" class="md-nav__link">
+    SIGFPE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sigsegv" title="SIGSEGV" class="md-nav__link">
+    SIGSEGV
   </a>
   
 </li>
@@ -1042,74 +1056,66 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-02-member-functions.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch10-02-signals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">メンバ関数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>クラスが持つ関数をメンバ関数といいます。</p>
-<p>長方形を扱う <code>Rectangle</code> クラスに
-面積を求めるメンバ関数 <code>Area</code> を持たせるには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-<span class="hll">    <span class="kt">int</span> <span class="n">Area</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="hll">       <span class="k">return</span> <span class="n">height_</span> <span class="o">*</span> <span class="n">width_</span><span class="p">;</span>
-</span><span class="hll">    <span class="p">}</span>
-</span>
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
+                <h1 id="_1">シグナル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>シグナルとはプログラム実行中に外部から要求を通知する仕組みです。
+OS からのエラー通知などで使用されます。</p>
+<p><code>&lt;csignal&gt;</code> で定義されるシグナルには以下の6種類があります。</p>
+<ul>
+<li>SIGABRT</li>
+<li>SIGFPE</li>
+<li>SIGILL</li>
+<li>SIGINT</li>
+<li>SIGSEGV</li>
+<li>SIGTERM</li>
+</ul>
+<p>一部を紹介します。</p>
+<h2 id="sigabrt">SIGABRT<a class="headerlink" href="#sigabrt" title="Permanent link">&para;</a></h2>
+<p><a href="https://cpprefjp.github.io/reference/cstdlib/abort.html">std::abort</a> の呼び出しによって発生します。</p>
+<p><a href="https://cpprefjp.github.io/reference/cstdlib/abort.html">std::abort</a> は
+<a href="https://cpprefjp.github.io/reference/exception/terminate.html">std::terminate</a> などから呼び出されます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;exception&gt;</span><span class="cp"></span>
 
-<p>メンバ関数を使用するには <code>.</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="hll"><span class="n">r</span><span class="p">.</span><span class="n">Area</span><span class="p">();</span>
-</span></pre></div>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 例外が捕捉されないため std::terminate が呼び出される</span>
+    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="p">();</span>
 
-<h2 id="_2">クラス宣言とは別に定義<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>クラス宣言とは別にメンバ関数を定義するには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-<span class="hll">    <span class="kt">int</span> <span class="n">Area</span><span class="p">();</span>
-</span>
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="hll"><span class="kt">int</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">Area</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="hll">    <span class="k">return</span> <span class="n">height_</span> <span class="o">*</span> <span class="n">width_</span><span class="p">;</span>
-</span><span class="hll"><span class="p">}</span>
-</span></pre></div>
-
-<p>どのクラスのメンバ関数であるかを表すために <code>Rectangle::</code> が必要になります。</p>
-<h2 id="const">const メンバ関数<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
-<p>引数リストのあとに <code>const</code> をつけることで <code>const</code> メンバ関数になります。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-<span class="hll">    <span class="kt">int</span> <span class="n">Area</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-</span><span class="p">};</span>
-</pre></div>
-
-<p><code>const</code> メンバ関数ではメンバ変数を変更することができません。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
- <span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">Area</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">Area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
-<span class="hll">    <span class="n">height_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// メンバ変数を変更するとコンパイルエラーになります</span>
-</span>    <span class="k">return</span> <span class="n">height_</span> <span class="o">*</span> <span class="n">width_</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-<p><code>const</code> メンバ関数はメンバ変数を変更しないため、
-オブジェクトの状態を変化させずに呼び出すことができます。</p>
-<p>メンバ変数を変更しないという制約を満たすために、
-<code>const</code> メンバ関数から呼び出せるメンバ関数は <code>const</code> メンバ関数に限定されます。</p>
+<h2 id="sigfpe">SIGFPE<a class="headerlink" href="#sigfpe" title="Permanent link">&para;</a></h2>
+<p>整数の0除算など不正な算術演算を行うと発生します。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span>  <span class="c1">// 整数の0除算</span>
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">浮動小数点数に対する算術演算エラー</p>
+<p>多くの処理系では浮動小数点数の規格として <a href="https://ja.wikipedia.org/wiki/IEEE_754">IEEE 754</a> が使用されており、
+以下を値として使用することができます。</p>
+<ul>
+<li>非数 <code>NaN</code></li>
+<li>符号付ゼロ (<span><span class="MathJax_Preview">+0</span><script type="math/tex">+0</script></span> と <span><span class="MathJax_Preview">-0</span><script type="math/tex">-0</script></span>)</li>
+<li>無限大 (<span><span class="MathJax_Preview">+\infty</span><script type="math/tex">+\infty</script></span> と <span><span class="MathJax_Preview">-\infty</span><script type="math/tex">-\infty</script></span>)</li>
+</ul>
+<p>こうした処理系では浮動小数点数の演算結果でこれらの値を使用し、
+浮動小数点数のシグナルを発生させないようにしている場合が多いです。</p>
+</div>
+<!-- MEMO: シグナルが発生しない場合でも <cfenv> を利用することで検知可能
+https://ja.cppreference.com/w/cpp/numeric/fenv
+-->
+
+<h2 id="sigsegv">SIGSEGV<a class="headerlink" href="#sigsegv" title="Permanent link">&para;</a></h2>
+<p>無効なメモリアクセス (セグメンテーション違反) を行うと発生します。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+<span class="c1">// nullptr に対するデリファレンスで SIGSEGV が発生</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
                 
                   
                 
@@ -1130,7 +1136,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch07-01-member-varialbes/" title="7.1. メンバ変数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch10-01-exceptions/" title="10.1 例外処理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1139,25 +1145,11 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                7.1. メンバ変数
+                10.1 例外処理
               </span>
             </div>
           </a>
         
-        
-          <a href="../ch07-03-inheritance/" title="7.3. 継承" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  次
-                </span>
-                7.3. 継承
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
