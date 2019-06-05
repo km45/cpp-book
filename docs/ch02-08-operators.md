@@ -118,3 +118,22 @@ std::cout << (a ^ b) << std::endl; // 0x33
 ```
 
 [cppreference_expressions]: https://ja.cppreference.com/w/cpp/language/expressions
+
+## sizeof
+
+`sizeof` 演算子を使うことで、オブジェクトや型のバイト単位のサイズを取得することが出来ます。
+
+!!! warning "環境依存"
+    出力されるサイズは実行環境によって異なる場合があります。
+
+<!-- MEMO: サイズ指定付き整数型 へのリンクを貼るか -->
+
+```cpp
+#include <iostream>
+
+double x = 3.14;
+std::cout << sizeof(3) << std::endl;    // 4
+std::cout << sizeof(int) << std::endl;  // 4
+std::cout << sizeof(x) << std::endl;    // 8
+std::cout << sizeof(&x) << std::endl;   // 8
+```
