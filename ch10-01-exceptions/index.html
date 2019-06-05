@@ -1577,36 +1577,7 @@ C++11 では非推奨となっており C++17 では削除されているため�
 <h3 id="stdruntime_error">std::runtime_error<a class="headerlink" href="#stdruntime_error" title="Permanent link">&para;</a></h3>
 <p>実行時に評価する値の不正や実行環境の問題など
 実行時エラーを表すためのクラスです。</p>
-<p><code>std::locale</code> で実行環境にないロケールを指定した場合などに送出されます。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;locale&gt;</span><span class="cp"></span>
-
-<span class="kt">void</span> <span class="nf">ShowValidLocales</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">locale_name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">locale</span> <span class="n">locale</span><span class="p">(</span><span class="n">locale_name</span><span class="p">);</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">locale</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// 無効な場合にはエラーメッセージを標準エラーに出力</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">ShowValidLocales</span><span class="p">(</span><span class="s">&quot;en_US.UTF-8&quot;</span><span class="p">);</span>
-    <span class="n">ShowValidLocales</span><span class="p">(</span><span class="s">&quot;ja_JP.UTF-8&quot;</span><span class="p">);</span>
-    <span class="n">ShowValidLocales</span><span class="p">(</span><span class="s">&quot;zh_CN.UTF-8&quot;</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>英語(米国)と日本語(日本)はあるが、
-簡体字中国語(中国)がない環境で実行すると以下のようになります。</p>
-<div class="codehilite"><pre><span></span>$ ./a.out
-en_US.UTF-8
-ja_JP.UTF-8
-locale::facet::_S_create_c_locale name not valid
-</pre></div>
+<!-- TODO: std::locale 以外での例を追加する -->
 
 <h3 id="stdbad_cast">std::bad_cast<a class="headerlink" href="#stdbad_cast" title="Permanent link">&para;</a></h3>
 <p>dynamic_cast で失敗した場合に送出されます。</p>
