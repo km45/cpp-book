@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch04-01-multiple-files/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch10-03-assertions/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>4.1. 複数ファイル - ゼロから学ぶ C++</title>
+        <title>10.3 アサーション - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              4.1. 複数ファイル
+              10.3 アサーション
             </span>
           
         </div>
@@ -541,12 +541,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       4. ファイル分割とスコープ
@@ -562,49 +560,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        4.1. 複数ファイル
-      </label>
-    
-    <a href="./" title="4.1. 複数ファイル" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch04-01-multiple-files/" title="4.1. 複数ファイル" class="md-nav__link">
       4.1. 複数ファイル
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="インクルードガード" class="md-nav__link">
-    インクルードガード
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -941,10 +901,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       10. エラー処理
@@ -984,11 +946,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch10-03-assertions/" title="10.3 アサーション" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10.3 アサーション
+      </label>
+    
+    <a href="./" title="10.3 アサーション" class="md-nav__link md-nav__link--active">
       10.3 アサーション
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assert" title="assert" class="md-nav__link">
+    assert
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1018,8 +1018,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="インクルードガード" class="md-nav__link">
-    インクルードガード
+  <a href="#assert" title="assert" class="md-nav__link">
+    assert
   </a>
   
 </li>
@@ -1040,138 +1040,85 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch04-01-multiple-files.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch10-03-assertions.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">複数ファイル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>C++ では2種類のファイルを扱います。</p>
-<ul>
-<li>ヘッダ (拡張子: <code>.h</code> , <code>.hpp</code> )<ul>
-<li>関数のプロトタイプ宣言を記述します。</li>
-</ul>
-</li>
-<li>ソース (拡張子: <code>.cpp</code> , <code>.cc</code> , <code>.cxx</code> )<ul>
-<li>関数の実装を記述します。</li>
-</ul>
-</li>
-</ul>
-<p>複数のファイルを跨いだコードを書くには次のようにします。
-<code>main.cc</code> 内で <code>a.cc</code> の <code>DoSomething()</code> を使うためにプロトタイプ宣言をしています。</p>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="kt">void</span> <span class="nf">DoSomething</span><span class="p">();</span> <span class="c1">// プロトタイプ宣言</span>
+                <h1 id="_1">アサーション<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="assert">assert<a class="headerlink" href="#assert" title="Permanent link">&para;</a></h2>
+<p>実行時に条件を満たさないと
+<a href="https://cpprefjp.github.io/reference/cstdlib/abort.html">std::abort</a> を呼び出してプログラムを異常終了させる処理です。</p>
+<p><code>assert</code> を使用するには <code>&lt;cassert&gt;</code> のインクルードが必要です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">Max</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">    <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">.</span><span class="n">empty</span><span class="p">());</span>
 </span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">max</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+<span class="p">}</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">DoSomething</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v2</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Max</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Max</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
-</div>
-<div class="admonition example">
-<p class="admonition-title">a.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">DoSomething</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* 実装省略 */</span> <span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>複数ファイルをコンパイルして実行ファイルを生成する場合は、
-次のようにコンパイルしたいファイルを並べてコマンドを実行します。</p>
-<div class="codehilite"><pre><span></span>$ g++ main.cc a.cc
+<p>実行結果は次のようになります。</p>
+<div class="codehilite"><pre><span></span>$ ./a.exe
+<span class="m">5</span>
+assertion <span class="s2">&quot;!v.empty()&quot;</span> failed: file <span class="s2">&quot;main.cc&quot;</span>, line <span class="m">7</span>, <span class="k">function</span>: int Max<span class="o">(</span>const std::vector&lt;int&gt;<span class="p">&amp;</span><span class="o">)</span>
+Aborted <span class="o">(</span>コアダンプ<span class="o">)</span>
 </pre></div>
 
-</div>
-<p>上記のコードでも動作はしますが、
-<code>a.cc</code> に記述している関数を他の様々なソースから利用したいとなった場合に、
-その都度、それぞれのソースにプロトタイプ宣言を追加することになり、手間がかかります。</p>
-<p>そこで登場するのがヘッダです。
-プロトタイプ宣言だけヘッダに記述することで、宣言を1回書くだけで済むようになります。</p>
-<div class="admonition example">
-<p class="admonition-title">a.h</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="kt">void</span> <span class="nf">DoSomething</span><span class="p">();</span>
-</span><span class="hll"><span class="kt">void</span> <span class="nf">DoSomething2</span><span class="p">();</span>
-</span></pre></div>
-</td></tr></table>
-
-</div>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="cp">#include</span> <span class="cpf">&quot;a.h&quot;</span><span class="cp"></span>
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">DoSomething</span><span class="p">();</span>
-    <span class="n">DoSomething2</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<div class="admonition example">
-<p class="admonition-title">a.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">DoSomething</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* 実装省略 */</span> <span class="p">}</span>
-<span class="kt">void</span> <span class="nf">DoSomething2</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* 実装省略 */</span> <span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<p><code>main.cc</code> 内で <code>a.cc</code> の関数を利用できるようにするために</p>
-<ol>
-<li><code>a.h</code> で <code>a.cc</code> の関数のプロトタイプ宣言をします。</li>
-<li><code>main.cc</code> で <code>a.h</code> を取り込むために <code>#include "a.h"</code> と記述します。</li>
-</ol>
-<p>これで <code>main.cc</code> から <code>a.cc</code> の関数を利用することが出来ます。</p>
-<h2 id="_2">インクルードガード<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ヘッダにはインクルードガードが必要です。</p>
-<div class="admonition example">
-<p class="admonition-title">a.h</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="cp">#ifndef A_H_</span>
-</span><span class="hll"><span class="cp">#define A_H_</span>
-</span>
-<span class="kt">void</span> <span class="nf">DoSomething</span><span class="p">();</span>
-<span class="kt">void</span> <span class="nf">DoSomething2</span><span class="p">();</span>
-
-<span class="hll"><span class="cp">#endif  </span><span class="c1">// A_H_</span>
-</span></pre></div>
-</td></tr></table>
-
-</div>
-<p>インクルードガードがあることで、ソースが同じヘッダを複数回インクルードすることを防ぎます。</p>
-<p><code>_</code> で始まる名前や <code>__</code> を含むような名前は、
-コンパイラや標準ライブラリにて予約されている識別子と名前が被る恐れがあるため使ってはいけません。</p>
-<div class="admonition warning">
-<div class="codehilite"><pre><span></span><span class="cp">#define _A_H_ </span><span class="c1">//  _ で始まるのでNG</span>
-<span class="cp">#define A__H_ </span><span class="c1">// __ を含むのでNG</span>
+<p><code>assert</code> は開発中にバグを取り除くことを想定した機能で、 <code>NDEBUG</code> が定義されるリリースビルドでは無効となります。
+<code>NDEBUG</code> を定義するには <code>-DNDEBUG</code> を指定します。</p>
+<div class="codehilite"><pre><span></span>$ g++ -std<span class="o">=</span>c++11 -DNDEBUG main.cc
 </pre></div>
 
-</div>
-<p>インクルードガードは一般的にプロジェクトごとに命名規則を設けます。</p>
+<p><code>NDEBUG</code> を定義してビルドすると実行結果は次のように変化します。</p>
+<div class="codehilite"><pre><span></span>$ ./a.exe
+<span class="m">5</span>
+-2147483648
+</pre></div>
                 
                   
                 
@@ -1192,7 +1139,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch03-08-iterators/" title="3.8. イテレータ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch10-02-signals/" title="10.2 シグナル" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1201,25 +1148,11 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                3.8. イテレータ
+                10.2 シグナル
               </span>
             </div>
           </a>
         
-        
-          <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  次
-                </span>
-                5.1. 標準入出力
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
