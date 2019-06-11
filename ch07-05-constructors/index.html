@@ -1223,6 +1223,20 @@
 コピー元を変更せずにコピーを行うために <code>const</code> の参照にすることが多いです。</p>
 <p>コピーコンストラクタを定義していないクラスでは、
 コンパイラによって暗黙的にコピーコンストラクタが定義されます。</p>
+<details class="question"><summary>暗黙的にコピーコンストラクタが定義されないケース</summary><p>コピーコンストラクタを定義していないクラスであっても、
+特定の条件を満たした場合には暗黙的なコピーコンストラクタの定義は行われなくなります。</p>
+<p>条件の一例として次のものがあります。</p>
+<ul>
+<li>コピーできないメンバ変数をもつ</li>
+<li>右辺値参照型のメンバ変数をもつ</li>
+<li>下記のいずれかが明示的に定義されている<ul>
+<li>ムーブコンストラクタ</li>
+<li>ムーブ代入演算子</li>
+</ul>
+</li>
+</ul>
+<p>詳細は <a href="https://ja.cppreference.com/w/cpp/language/copy_constructor">コピーコンストラクタ - cppreference.com</a> を参照してください。</p>
+</details>
 <h2 id="_6">ムーブコンストラクタ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>そのクラスの右辺値参照だけを受け取るコンストラクタをムーブコンストラクタといいます。</p>
 <div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Movable</span> <span class="p">{</span>
@@ -1236,6 +1250,23 @@
 <span class="n">Movable</span> <span class="nf">m2</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">m1</span><span class="p">));</span>  <span class="c1">// ムーブコンストラクタでオブジェクト作成</span>
 </pre></div>
 
+<p>ムーブコンストラクタを定義していないクラスでは、
+コンパイラによって暗黙的にムーブコンストラクタが定義されます。</p>
+<details class="question"><summary>暗黙的にムーブコンストラクタが定義されないケース</summary><p>ムーブコンストラクタを定義していないクラスであっても、
+特定の条件を満たした場合には暗黙的なムーブコンストラクタの定義は行われなくなります。</p>
+<p>条件の一例として次のものがあります。</p>
+<ul>
+<li>ムーブできないメンバ変数をもつ</li>
+<li>下記のいずれかが明示的に定義されている<ul>
+<li>コピーコンストラクタ</li>
+<li>コピー代入演算子</li>
+<li>ムーブ代入演算子</li>
+<li>デストラクタ</li>
+</ul>
+</li>
+</ul>
+<p>詳細は <a href="https://ja.cppreference.com/w/cpp/language/move_constructor">ムーブコンストラクタ - cppreference.com</a> を参照してください。</p>
+</details>
 <h2 id="explicit">変換コンストラクタと explicit<a class="headerlink" href="#explicit" title="Permanent link">&para;</a></h2>
 <p>値を1つだけ受け取るコンストラクタを変換コンストラクタといいます。
 コピーコンストラクタやムーブコンストラクタも変換コンストラクタです。</p>
