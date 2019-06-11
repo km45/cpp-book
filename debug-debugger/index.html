@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-08-operators/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/debug-debugger/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.8. 演算子 - ゼロから学ぶ C++</title>
+        <title>デバッガ - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.8. 演算子
+              デバッガ
             </span>
           
         </div>
@@ -301,12 +301,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       2. 基本構文
@@ -406,63 +404,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.8. 演算子
-      </label>
-    
-    <a href="./" title="2.8. 演算子" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch02-08-operators/" title="2.8. 演算子" class="md-nav__link">
       2.8. 演算子
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="四則演算と剰余" class="md-nav__link">
-    四則演算と剰余
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="インクリメント/デクリメント" class="md-nav__link">
-    インクリメント/デクリメント
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="ビットの演算" class="md-nav__link">
-    ビットの演算
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1015,10 +961,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       デバッグ
@@ -1034,11 +982,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../debug-debugger/" title="デバッガ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        デバッガ
+      </label>
+    
+    <a href="./" title="デバッガ" class="md-nav__link md-nav__link--active">
       デバッガ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" title="GDB のインストール" class="md-nav__link">
+    GDB のインストール
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1104,22 +1090,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="四則演算と剰余" class="md-nav__link">
-    四則演算と剰余
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="インクリメント/デクリメント" class="md-nav__link">
-    インクリメント/デクリメント
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="ビットの演算" class="md-nav__link">
-    ビットの演算
+  <a href="#gdb" title="GDB のインストール" class="md-nav__link">
+    GDB のインストール
   </a>
   
 </li>
@@ -1140,104 +1112,37 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-08-operators.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/debug-debugger.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">演算子<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>算術演算子を中心に、C++ で利用できる演算子を紹介します。
-本項で紹介されていない演算子については <a href="https://ja.cppreference.com/w/cpp/language/expressions">式 - cppreference.com</a> を参照してください。</p>
-<h2 id="_2">四則演算と剰余<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>基本的な演算は次の演算子を使うことで可能です。</p>
-<div class="codehilite"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 加算</span>
-<span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 減算</span>
-<span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 乗算</span>
-<span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 除算</span>
-<span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 剰余</span>
-</pre></div>
-
-<p><code>0</code> で除算(剰余)を行うと実行時エラーになるため、注意してください。</p>
-<div class="admonition failure">
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">div</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 実行時エラー</span>
-<span class="kt">int</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">%</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 実行時エラー</span>
-</pre></div>
-
-</div>
-<p>演算の対象となるいずれかの値が <code>double</code> ( <code>float</code> )の場合、
-他方の値も <code>double</code> ( <code>float</code> ) として変換された上で演算が行われます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">ix</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">iy</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="mf">50.0</span><span class="p">;</span>
-
-<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ix</span> <span class="o">/</span> <span class="n">iy</span><span class="p">;</span> <span class="c1">// int = int / int</span>
-<span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">ix</span> <span class="o">/</span> <span class="n">dy</span><span class="p">;</span> <span class="c1">// double = double(intから変換) / double</span>
-<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">/</span> <span class="n">iy</span><span class="p">;</span> <span class="c1">// double = double / double(intから変換)</span>
-<span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">dx</span> <span class="o">/</span> <span class="n">dy</span><span class="p">;</span> <span class="c1">// double = double / double</span>
-</pre></div>
-
-<h2 id="_3">インクリメント/デクリメント<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="o">++</span><span class="n">x</span><span class="p">;</span> <span class="c1">// 前置インクリメント</span>
-<span class="n">x</span><span class="o">++</span><span class="p">;</span> <span class="c1">// 後置インクリメント</span>
-<span class="o">--</span><span class="n">x</span><span class="p">;</span> <span class="c1">// 前置デクリメント</span>
-<span class="n">x</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 後置デクリメント</span>
-</pre></div>
-
-<p>前置の場合は、インクリメント/デクリメントの演算が先に行われます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="o">++</span><span class="n">a</span><span class="p">;</span> <span class="c1">// aをインクリメントしてから、bに代入する</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 6</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 6</span>
-</pre></div>
-
-<p>対して、後置の場合は、インクリメント/デクリメントの演算以外の処理が先に行われます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">++</span><span class="p">;</span> <span class="c1">// aをbに代入してから、aをインクリメントする</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 6</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 5</span>
-</pre></div>
-
-<p>使用する状況にも依りますが、後置インクリメント/デクリメントよりも前置インクリメント/デクリメントのほうが効率が良いとされています。</p>
-<h2 id="_4">ビットの演算<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>ビットに対する演算は次の演算子を使うことで可能です。</p>
-<div class="codehilite"><pre><span></span><span class="o">~</span><span class="n">x</span> <span class="c1">// 否定</span>
-<span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="c1">// 左シフト</span>
-<span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="c1">// 右シフト</span>
-<span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="c1">// 論理積</span>
-<span class="n">x</span> <span class="o">|</span> <span class="n">y</span> <span class="c1">// 論理和</span>
-<span class="n">x</span> <span class="o">^</span> <span class="n">y</span> <span class="c1">// 排他的論理和</span>
-</pre></div>
-
-<p><code>std::bitset</code> を使うことで、ビット列(2進数)での表記が確認できます。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;bitset&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="k">auto</span> <span class="n">bits_a</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;00001111&quot;</span><span class="p">);</span> <span class="c1">// 15を8ビットで表す: 00001111</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">~</span><span class="n">bits_a</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 否定: 11110000</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bits_a</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 左に2シフト: 00111100</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bits_a</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 右に2シフト: 00000011</span>
-
-<span class="k">auto</span> <span class="n">bits_b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;00111100&quot;</span><span class="p">);</span> <span class="c1">// 60を8ビットで表す: 00111100</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bits_a</span> <span class="o">&amp;</span> <span class="n">bits_b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 論理積: 00001100</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bits_a</span> <span class="o">|</span> <span class="n">bits_b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 論理和: 00111111</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">bits_a</span> <span class="o">^</span> <span class="n">bits_b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 排他的論理和: 00110011</span>
-</pre></div>
-
-<p>数値型でもビット演算は行なえます。
-ビットを取り扱う際は、 <code>unsigned</code> が付いた符号なし整数型を利用することが望ましいです。</p>
-<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mh">0x0000000f</span><span class="p">;</span> <span class="c1">// 15</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">showbase</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">hex</span><span class="p">;</span> <span class="c1">// 基数のプレフィックスを出力 + 16進法で出力</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">~</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0xfffffff0</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0x3c</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0x3</span>
-
-<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mh">0x0000003c</span><span class="p">;</span> <span class="c1">// 60</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0xc</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0x3f</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 0x33</span>
+                <h1 id="_1">デバッガ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>コンパイラごとに対応するデバッガが存在します。</p>
+<table>
+<thead>
+<tr>
+<th>コンパイラ</th>
+<th align="left">デバッガ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GCC</td>
+<td align="left">GDB</td>
+</tr>
+<tr>
+<td>Clang</td>
+<td align="left">LLDB</td>
+</tr>
+<tr>
+<td>Visual C++</td>
+<td align="left">CDB</td>
+</tr>
+</tbody>
+</table>
+<p>本書では GCC を扱うためデバッガは GDB を使用します。</p>
+<h2 id="gdb">GDB のインストール<a class="headerlink" href="#gdb" title="Permanent link">&para;</a></h2>
+<p>msys2 のターミナルを起動して下記コマンドを打ってインストールします。</p>
+<div class="codehilite"><pre><span></span>$ pacman -S gdb
 </pre></div>
                 
                   
@@ -1259,7 +1164,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-07-control-flow/" title="2.7. 制御文" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch10-03-assertions/" title="10.3 アサーション" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1268,19 +1173,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.7. 制御文
+                10.3 アサーション
               </span>
             </div>
           </a>
         
         
-          <a href="../ch03-01-arrays/" title="3.1. 配列" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../debug-build/" title="デバッグビルド" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                3.1. 配列
+                デバッグビルド
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

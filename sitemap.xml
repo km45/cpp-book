@@ -200,4 +200,24 @@
      <lastmod>2019-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/debug-debugger/</loc>
+     <lastmod>2019-06-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/debug-build/</loc>
+     <lastmod>2019-06-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/debug-gdb/</loc>
+     <lastmod>2019-06-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/debug-vscode/</loc>
+     <lastmod>2019-06-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
