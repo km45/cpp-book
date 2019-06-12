@@ -485,6 +485,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_4" title="配列とポインタ" class="md-nav__link">
+    配列とポインタ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="関数に配列を渡す" class="md-nav__link">
+    関数に配列を渡す
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stdarray" title="std::array" class="md-nav__link">
     std::array
   </a>
@@ -1154,6 +1168,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_4" title="配列とポインタ" class="md-nav__link">
+    配列とポインタ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="関数に配列を渡す" class="md-nav__link">
+    関数に配列を渡す
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stdarray" title="std::array" class="md-nav__link">
     std::array
   </a>
@@ -1217,6 +1245,59 @@
 </pre></div>
 
 <p>これが一番手軽な初期化方法です。</p>
+<h2 id="_4">配列とポインタ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>配列を参照する時に、 <code>[]</code> を省略すると、配列の先頭を指し示すポインタが取得できます。
+先頭のポインタにインデックスを足すことで、それぞれの要素に対応したポインタが取得できます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>        <span class="c1">// 2</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 4</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 6</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 8</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 10</span>
+</pre></div>
+
+<h2 id="_5">関数に配列を渡す<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>配列も通常の変数同様、関数に渡すことが出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">PrintArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+
+    <span class="n">PrintArray</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>しかし、上記の例だと要素数が <code>5</code> 以外の配列を扱いたい時に不便です。
+そのため、関数に配列を渡す場合は、配列の先頭ポインタと要素数をセットで渡すことが多いです。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">PrintArray</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+
+    <span class="n">PrintArray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="stdarray">std::array<a class="headerlink" href="#stdarray" title="Permanent link">&para;</a></h2>
 <p>より高機能な配列を使用したい場合は <code>std::array</code> を使用します。</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;array&gt;</span><span class="cp"></span>
