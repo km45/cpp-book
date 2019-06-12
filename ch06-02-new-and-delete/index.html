@@ -1124,6 +1124,42 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      付録
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        付録
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../appendix-malloc-and-free/" title="malloc/free" class="md-nav__link">
+      malloc/free
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1181,29 +1217,33 @@
 <h2 id="new">new<a class="headerlink" href="#new" title="Permanent link">&para;</a></h2>
 <p>ヒープにメモリを動的に確保する場合は <code>new</code> 演算子を利用します。</p>
 <div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>  <span class="c1">// p1 は new で確保されたメモリ領域を指すポインタ</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> <span class="c1">// 配列の場合は [] を付ける</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>    <span class="c1">// 配列の場合は [] を付ける</span>
 </pre></div>
 
 <h2 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
-<p>ヒープに動的に確保したメモリを開放する場合は <code>delete</code> 演算子を利用します。</p>
+<p>ヒープに動的に確保したメモリを解放する場合は <code>delete</code> 演算子を利用します。</p>
 <div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
 <span class="kt">int</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
 
-<span class="k">delete</span> <span class="n">p1</span><span class="p">;</span>   <span class="c1">// new によって確保されたメモリを delete で解放</span>
-<span class="k">delete</span><span class="p">[]</span> <span class="n">p2</span><span class="p">;</span> <span class="c1">// 配列の場合は [] を付ける</span>
+<span class="k">delete</span> <span class="n">p1</span><span class="p">;</span>    <span class="c1">// new によって確保されたメモリを delete で解放</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">p2</span><span class="p">;</span>  <span class="c1">// 配列の場合は [] を付ける</span>
 </pre></div>
 
 <p><code>new</code> を利用して確保したメモリの解放を忘れるとメモリリークになります。 <code>new</code> と <code>delete</code> は必ずセットで使いましょう。</p>
 <div class="admonition error">
+<p class="admonition-title">メモリリーク</p>
 <div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">100000</span><span class="p">];</span>
 
     <span class="c1">// delete せずに Function() が終了すると…</span>
-<span class="p">}</span> <span class="c1">// int[100000] 分のメモリが解放されないままになる。</span>
+<span class="p">}</span>   <span class="c1">// int[100000] 分のメモリが解放されないままになる。</span>
 </pre></div>
 
 </div>
-<!-- MEMO: コンストラクタ呼び出しの話とかはmalloc/free側に書く. 非推奨なことを記載する. -->
+<div class="admonition warning">
+<p class="admonition-title">malloc/free</p>
+<p><a href="../appendix-malloc-and-free/">malloc/free</a> を利用することでもメモリの確保・解放は可能ですが、C++ での利用は推奨されていません。</p>
+</div>
                 
                   
                 
