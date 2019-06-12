@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch10-02-signals/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch05-02-file-operations/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>10.2 シグナル - ゼロから学ぶ C++</title>
+        <title>5.2. ファイル操作 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              10.2 シグナル
+              5.2. ファイル操作
             </span>
           
         </div>
@@ -577,10 +577,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       5. ストリーム操作
@@ -608,11 +610,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch05-02-file-operations/" title="5.2. ファイル操作" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.2. ファイル操作
+      </label>
+    
+    <a href="./" title="5.2. ファイル操作" class="md-nav__link md-nav__link--active">
       5.2. ファイル操作
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="ファイル読み込み" class="md-nav__link">
+    ファイル読み込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="ファイル書き出し" class="md-nav__link">
+    ファイル書き出し
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -913,12 +960,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
       10. エラー処理
@@ -946,63 +991,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        10.2 シグナル
-      </label>
-    
-    <a href="./" title="10.2 シグナル" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch10-02-signals/" title="10.2 シグナル" class="md-nav__link">
       10.2 シグナル
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sigabrt" title="SIGABRT" class="md-nav__link">
-    SIGABRT
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sigfpe" title="SIGFPE" class="md-nav__link">
-    SIGFPE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sigsegv" title="SIGSEGV" class="md-nav__link">
-    SIGSEGV
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1152,22 +1145,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sigabrt" title="SIGABRT" class="md-nav__link">
-    SIGABRT
+  <a href="#_2" title="ファイル読み込み" class="md-nav__link">
+    ファイル読み込み
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sigfpe" title="SIGFPE" class="md-nav__link">
-    SIGFPE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sigsegv" title="SIGSEGV" class="md-nav__link">
-    SIGSEGV
+  <a href="#_3" title="ファイル書き出し" class="md-nav__link">
+    ファイル書き出し
   </a>
   
 </li>
@@ -1188,66 +1174,110 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch10-02-signals.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch05-02-file-operations.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">シグナル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>シグナルとはプログラム実行中に外部から要求を通知する仕組みです。
-OS からのエラー通知などで使用されます。</p>
-<p><code>&lt;csignal&gt;</code> で定義されるシグナルには以下の6種類があります。</p>
-<ul>
-<li>SIGABRT</li>
-<li>SIGFPE</li>
-<li>SIGILL</li>
-<li>SIGINT</li>
-<li>SIGSEGV</li>
-<li>SIGTERM</li>
-</ul>
-<p>一部を紹介します。</p>
-<h2 id="sigabrt">SIGABRT<a class="headerlink" href="#sigabrt" title="Permanent link">&para;</a></h2>
-<p><a href="https://cpprefjp.github.io/reference/cstdlib/abort.html">std::abort</a> の呼び出しによって発生します。</p>
-<p><a href="https://cpprefjp.github.io/reference/cstdlib/abort.html">std::abort</a> は
-<a href="https://cpprefjp.github.io/reference/exception/terminate.html">std::terminate</a> などから呼び出されます。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;exception&gt;</span><span class="cp"></span>
+                <h1 id="_1">ファイル操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>&lt;fstream&gt;</code> に用意されているクラスを使うことでファイルの操作が出来ます。</p>
+<h2 id="_2">ファイル読み込み<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>ファイルを読み込む場合は <code>std::ifstream</code> を使います。
+<code>&lt;string&gt;</code> に用意されている <code>std::getline</code> で1行ずつ読み込むことが出来ます。</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">main.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 例外が捕捉されないため std::terminate が呼び出される</span>
-    <span class="k">throw</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">);</span>  <span class="c1">// 読み込むファイルのパスを指定</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// 1行ずつ読み込む</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">line</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
-
-<h2 id="sigfpe">SIGFPE<a class="headerlink" href="#sigfpe" title="Permanent link">&para;</a></h2>
-<p>整数の0除算など不正な算術演算を行うと発生します。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span>  <span class="c1">// 整数の0除算</span>
-</pre></div>
-
-<div class="admonition note">
-<p class="admonition-title">浮動小数点数に対する算術演算エラー</p>
-<p>多くの処理系では浮動小数点数の規格として <a href="https://ja.wikipedia.org/wiki/IEEE_754">IEEE 754</a> が使用されており、
-以下を値として使用することができます。</p>
-<ul>
-<li>非数 <code>NaN</code></li>
-<li>符号付ゼロ (<span><span class="MathJax_Preview">+0</span><script type="math/tex">+0</script></span> と <span><span class="MathJax_Preview">-0</span><script type="math/tex">-0</script></span>)</li>
-<li>無限大 (<span><span class="MathJax_Preview">+\infty</span><script type="math/tex">+\infty</script></span> と <span><span class="MathJax_Preview">-\infty</span><script type="math/tex">-\infty</script></span>)</li>
-</ul>
-<p>こうした処理系では浮動小数点数の演算結果でこれらの値を使用し、
-浮動小数点数のシグナルを発生させないようにしている場合が多いです。</p>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">file.txt</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
+To dig the dust enclosed here.
+Blest be the man that spares these stones,
+And cursed be he that moves my bones.
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_2" />
+<label for="__tab_1_2">実行結果</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
+To dig the dust enclosed here.
+Blest be the man that spares these stones,
+And cursed be he that moves my bones.
+</pre></div></div>
 </div>
-<!-- MEMO: シグナルが発生しない場合でも <cfenv> を利用することで検知可能
-https://ja.cppreference.com/w/cpp/numeric/fenv
--->
+<h2 id="_3">ファイル書き出し<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>ファイルへ書き出す場合は <code>std::ofstream</code> を使います。</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">main.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
-<h2 id="sigsegv">SIGSEGV<a class="headerlink" href="#sigsegv" title="Permanent link">&para;</a></h2>
-<p>無効なメモリアクセス (セグメンテーション違反) を行うと発生します。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;fruits.txt&quot;</span><span class="p">);</span>  <span class="c1">// 書き出すファイルのパスを指定</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;strawberry&quot;</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">,</span> <span class="s">&quot;grape&quot;</span> <span class="p">};</span>
 
-<span class="c1">// nullptr に対するデリファレンスで SIGSEGV が発生</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">fruit</span> <span class="p">:</span> <span class="n">fruits</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">fruit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 書き出し</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">プログラム実行後のfruits.txt</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>apple
+strawberry
+pear
+grape
+</pre></div></div>
+</div>
+<p>書き出す前に、既に同名のファイルが存在していた場合、中身は上書きされます。
+上書きせずに追記する場合は、コンストラクタの引数に <code>std::ios::app</code> を追加します。</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">main.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>
+</span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">quotation</span><span class="p">(</span><span class="s">&quot;--- William Shakespeare&#39;s Epitaph&quot;</span><span class="p">);</span>
+
+    <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">quotation</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">プログラム実行前のfile.txt</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
+To dig the dust enclosed here.
+Blest be the man that spares these stones,
+And cursed be he that moves my bones.
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_2" />
+<label for="__tab_3_2">プログラム実行後のfile.txt</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
+To dig the dust enclosed here.
+Blest be the man that spares these stones,
+And cursed be he that moves my bones.
+--- William Shakespeare&#39;s Epitaph
+</pre></div></div>
+</div>
                 
                   
                 
@@ -1268,7 +1298,7 @@ https://ja.cppreference.com/w/cpp/numeric/fenv
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch10-01-exceptions/" title="10.1 例外処理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1277,19 +1307,19 @@ https://ja.cppreference.com/w/cpp/numeric/fenv
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                10.1 例外処理
+                5.1. 標準入出力
               </span>
             </div>
           </a>
         
         
-          <a href="../ch10-03-assertions/" title="10.3 アサーション" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch06-01-memory-areas/" title="6.1. メモリ領域" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                10.3 アサーション
+                6.1. メモリ領域
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
