@@ -784,6 +784,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#this" title="this ポインタ" class="md-nav__link">
+    this ポインタ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1194,6 +1201,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#this" title="this ポインタ" class="md-nav__link">
+    this ポインタ
+  </a>
+  
+</li>
+      
       
       
       
@@ -1278,6 +1292,24 @@
 オブジェクトの状態を変化させずに呼び出すことができます。</p>
 <p>メンバ変数を変更しないという制約を満たすために、
 <code>const</code> メンバ関数から呼び出せるメンバ関数は <code>const</code> メンバ関数に限定されます。</p>
+<!-- TODO: staticメンバ関数の説明 -->
+
+<h2 id="this">this ポインタ<a class="headerlink" href="#this" title="Permanent link">&para;</a></h2>
+<p>メンバ関数 (static メンバ関数を除く) では
+<code>this</code> で自オブジェクトのポインタを取得することができます。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">Area</span><span class="p">();</span>
+
+    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">Rectangle</span><span class="o">::</span><span class="n">Area</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// this ポインタ経由でメンバ変数を使用</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">height_</span> <span class="o">*</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">width_</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
