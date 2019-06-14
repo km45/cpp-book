@@ -166,7 +166,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch07-07-structs/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch07-07-operator-overloading/</loc>
+     <lastmod>2019-06-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-08-structs/</loc>
      <lastmod>2019-06-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
