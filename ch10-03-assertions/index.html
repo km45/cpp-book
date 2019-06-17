@@ -1041,6 +1041,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#static_assert" title="static_assert" class="md-nav__link">
+    static_assert
+  </a>
+  
+</li>
+      
       
       
       
@@ -1228,6 +1235,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#static_assert" title="static_assert" class="md-nav__link">
+    static_assert
+  </a>
+  
+</li>
+      
       
       
       
@@ -1322,6 +1336,34 @@ Aborted <span class="o">(</span>コアダンプ<span class="o">)</span>
 <div class="codehilite"><pre><span></span>$ ./a.exe
 <span class="m">5</span>
 -2147483648
+</pre></div>
+
+<h2 id="static_assert">static_assert<a class="headerlink" href="#static_assert" title="Permanent link">&para;</a></h2>
+<p>コンパイル時に条件を満たさないとコンパイルエラーにする処理です。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="kt">int</span> <span class="n">N</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Array</span> <span class="p">{</span>
+    <span class="k">static_assert</span><span class="p">(</span><span class="n">N</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;サイズは0より大きくなければなりません&quot;</span><span class="p">);</span>
+
+ <span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">N</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="n">T</span> <span class="n">data_</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>  <span class="c1">// サイズ 0 の配列はコンパイルエラーにならない</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>コンパイル結果は以下のようになります。</p>
+<div class="codehilite"><pre><span></span>$ g++ -std<span class="o">=</span>c++11 -c main.cc
+main.cc: In instantiation of ‘class Array&lt;int, <span class="m">0</span>&gt;’:
+main.cc:12:19:   required from here
+main.cc:3:5: エラー: static assertion failed: サイズは0より大きくなければなりま
+せん
+     static_assert<span class="o">(</span>N &gt; <span class="m">0</span>, <span class="s2">&quot;サイズは0より大きくなければなりません&quot;</span><span class="o">)</span><span class="p">;</span>
+     ^~~~~~~~~~~~~
 </pre></div>
                 
                   
