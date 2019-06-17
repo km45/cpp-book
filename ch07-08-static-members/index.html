@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch06-04-move-semantics/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-08-static-members/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>6.4. ムーブセマンティクス - ゼロから学ぶ C++</title>
+        <title>7.8. static メンバ - ゼロから学ぶ C++</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#static" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              6.4. ムーブセマンティクス
+              7.8. static メンバ
             </span>
           
         </div>
@@ -637,12 +637,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       6. メモリの管理
@@ -694,70 +692,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        6.4. ムーブセマンティクス
-      </label>
-    
-    <a href="./" title="6.4. ムーブセマンティクス" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch06-04-move-semantics/" title="6.4. ムーブセマンティクス" class="md-nav__link">
       6.4. ムーブセマンティクス
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="コピーとムーブ" class="md-nav__link">
-    コピーとムーブ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="右辺値と左辺値" class="md-nav__link">
-    右辺値と左辺値
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdmove" title="std::move" class="md-nav__link">
-    std::move
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="右辺値参照" class="md-nav__link">
-    右辺値参照
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -782,10 +721,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       7. クラス
@@ -885,11 +826,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch07-08-static-members/" title="7.8. static メンバ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7.8. static メンバ
+      </label>
+    
+    <a href="./" title="7.8. static メンバ" class="md-nav__link md-nav__link--active">
       7.8. static メンバ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#static_1" title="static メンバ変数" class="md-nav__link">
+    static メンバ変数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static_2" title="static メンバ関数" class="md-nav__link">
+    static メンバ関数
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1231,29 +1217,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="コピーとムーブ" class="md-nav__link">
-    コピーとムーブ
+  <a href="#static_1" title="static メンバ変数" class="md-nav__link">
+    static メンバ変数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="右辺値と左辺値" class="md-nav__link">
-    右辺値と左辺値
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdmove" title="std::move" class="md-nav__link">
-    std::move
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="右辺値参照" class="md-nav__link">
-    右辺値参照
+  <a href="#static_2" title="static メンバ関数" class="md-nav__link">
+    static メンバ関数
   </a>
   
 </li>
@@ -1274,93 +1246,104 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch06-04-move-semantics.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-08-static-members.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">ムーブセマンティクス<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">コピーとムーブ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// ディープコピー</span>
-
-<span class="c1">// 以降 x は利用しない</span>
+                <h1 id="static">static メンバ<a class="headerlink" href="#static" title="Permanent link">&para;</a></h1>
+<h2 id="static_1">static メンバ変数<a class="headerlink" href="#static_1" title="Permanent link">&para;</a></h2>
+<p>クラスのオブジェクトごとではなく、クラスそのものがもつ変数です。</p>
+<div class="admonition warning">
+<p class="admonition-title">初期化と破棄のタイミング</p>
+<p>static メンバ変数の初期化/破棄はプログラムの開始/終了時にまとめて行われますが、
+実行順序を制御することができません。</p>
+<p>誤った扱いをすると原因特定が難しいエラーが発生しやすい機能であり、使用には注意が必要です。</p>
+</div>
+<p>メンバ変数の宣言に <code>static</code> をつけることで <code>static</code> メンバ変数を宣言することができます。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Counter</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">count_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 
-<p>この例の場合、<code>y</code> を生成するために <code>x</code> と同程度のメモリ領域を確保する必要があります。
-これはコストの面ではかなりの無駄があります。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// シャローコピー</span>
-<span class="n">x</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
-
-<span class="c1">// 以降 x は利用しない</span>
+<p>static メンバ変数はクラスの外で実体を定義する必要があります。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">Counter</span><span class="o">::</span><span class="n">count_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// 値 10 で初期化</span>
 </pre></div>
 
-<p>この例では <code>x</code> を <code>y</code> にシャローコピーした後に、 <code>x</code> に <code>nullptr</code> を代入しています。</p>
-<p>これがムーブの根底にある考え方で、
-ポインタの付け替えだけで、あたかも <code>x</code> が <code>y</code> に移動しているような挙動を実現出来ているため、
-ディープコピーのときよりもコストの面で有利です。</p>
-<p>しかし、ポインタの操作を伴う実装になるため、プログラマが細心の注意を払って実装しないと、
-ムーブの仕組みが実現できなくなるというリスクも存在します。</p>
-<p>そこで、 C++11からはムーブの考え方をテクニックとしてでは無く、言語仕様として実現する仕組みが取り入れられました。</p>
-<h2 id="_3">右辺値と左辺値<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>左辺値: 基本的にそのスコープの間生き続ける名前付きのオブジェクト</li>
-<li>右辺値: リテラルや関数が返す一時オブジェクトのようなその瞬間に破棄されて不要になるもの</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span> <span class="c1">// x は左辺値。300 のようなリテラルは右辺値。</span>
-<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">function</span><span class="p">();</span> <span class="c1">// y は左辺値。関数 function が返す一時オブジェクトは右辺値。</span>
-<span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// z と x は左辺値。</span>
-</pre></div>
+<p>ヘッダファイルが2つ以上のファイルでインクルードされる場合、
+ヘッダファイルで実体の定義を行うと多重定義となりリンクエラーになってしまいます。
+この問題を避けるために static メンバ変数の実体の定義はソースファイルで行います。</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">counter.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;counter.h&quot;</span><span class="cp"></span>
 
-<p>右辺値は左辺値へ格納したら必要無くなるので、右辺値にはムーブの考え方が適用できることがわかります。
-C++11 以降、コンパイラはこの考え方を認識し、ムーブを実現してくれるようになりました。</p>
-<h2 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="Permanent link">&para;</a></h2>
-<p>次の例では、<code>x</code> はコンパイラからしてみると左辺値なので、<code>y</code> への代入時にディープコピーされます。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// y と x は左辺値</span>
+<span class="kt">int</span> <span class="n">Counter</span><span class="o">::</span><span class="n">count_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">counter.h</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#ifndef COUNTER_H_</span>
+<span class="cp">#define COUNTER_H_</span>
 
-<span class="c1">// 以降 x は利用しない</span>
-</pre></div>
+<span class="k">class</span> <span class="nc">Counter</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">count_</span><span class="p">;</span>
+<span class="p">};</span>
 
-<p>そこで、左辺値を右辺値にキャストする <code>std::move</code> を使います。
-<code>x</code> を右辺値にキャストすることで、ディープコピーではなくムーブができるようになります。</p>
-<div class="codehilite"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">// std::move で x を右辺値にキャスト</span>
-
-<span class="c1">// 以降、xは利用しない</span>
-</pre></div>
-
-<h2 id="_4">右辺値参照<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>右辺値を参照するには <code>&amp;&amp;</code> を付けます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-</pre></div>
-
-<p>左辺値の参照と右辺値の参照は別の型として扱われるため、
-オーバーロードの仕組みを利用することで、引数が左辺値参照の時と右辺値参照の時で処理を分けることが可能です。</p>
+<span class="cp">#endif  </span><span class="c1">// COUNTER_H_</span>
+</pre></div></div>
+</div>
+<p>static メンバ変数を参照するには <code>Counter::count_</code> のようにします。</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;左辺値参照&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;右辺値参照&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="cp">#include</span> <span class="cpf">&quot;counter.h&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;hoge&quot;</span><span class="p">;</span>
-
-    <span class="n">Print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-    <span class="n">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">str</span><span class="p">));</span>
-
+    <span class="o">++</span><span class="n">Counter</span><span class="o">::</span><span class="n">count_</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Counter</span><span class="o">::</span><span class="n">count_</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 11</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
-左辺値参照
-右辺値参照
+<h2 id="static_2">static メンバ関数<a class="headerlink" href="#static_2" title="Permanent link">&para;</a></h2>
+<p>クラスのオブジェクトごとではなく、クラスそのものがもつ関数です。</p>
+<p>メンバ関数の宣言に static をつけることで static メンバ関数を宣言することができます。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Brightness</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">explicit</span> <span class="n">Brightness</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="o">:</span> <span class="n">value_</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="kt">int</span> <span class="n">Value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">value_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">Brightness</span> <span class="n">Maximum</span><span class="p">();</span>
+    <span class="k">static</span> <span class="n">Brightness</span> <span class="nf">Minimum</span><span class="p">();</span>
+    <span class="k">static</span> <span class="n">Brightness</span> <span class="nf">Median</span><span class="p">();</span>
+
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">value_</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
+
+<p>static メンバ関数は static メンバ変数以外のメンバ変数は直接参照できないため、
+static メンバ関数ではなく通常の関数で十分なことが多いです。</p>
+<p>通常の関数との違いは static メンバ関数はクラスに属するため、
+<code>protected</code> や <code>private</code> のメンバにもアクセスできることです。</p>
+<div class="codehilite"><pre><span></span><span class="n">Brightness</span> <span class="n">Brightness</span><span class="o">::</span><span class="n">Maximum</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Brightness</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Brightness</span> <span class="n">Brightness</span><span class="o">::</span><span class="n">Minimum</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Brightness</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Brightness</span> <span class="n">Brightness</span><span class="o">::</span><span class="n">Median</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Brightness</span><span class="p">((</span><span class="n">Maximum</span><span class="p">().</span><span class="n">value_</span> <span class="o">+</span> <span class="n">Minimum</span><span class="p">().</span><span class="n">value_</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>static メンバ関数は実行順序が定まるため、
+static メンバ変数の代わりに static メンバ関数を使用することで
+初期化順序を制御できない問題を回避することができます。</p>
                 
                   
                 
@@ -1381,7 +1364,7 @@ C++11 以降、コンパイラはこの考え方を認識し、ムーブを実�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch06-03-deep-and-shallow-copy/" title="6.3. ディープコピーとシャローコピー" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch07-07-operator-overloading/" title="7.7. 演算子オーバーロード" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1390,19 +1373,19 @@ C++11 以降、コンパイラはこの考え方を認識し、ムーブを実�
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                6.3. ディープコピーとシャローコピー
+                7.7. 演算子オーバーロード
               </span>
             </div>
           </a>
         
         
-          <a href="../ch06-05-smart-pointers/" title="6.5. スマートポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch07-09-structs/" title="7.9. 構造体" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                6.5. スマートポインタ
+                7.9. 構造体
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

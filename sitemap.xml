@@ -176,7 +176,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch07-08-structs/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch07-08-static-members/</loc>
+     <lastmod>2019-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-09-structs/</loc>
      <lastmod>2019-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
