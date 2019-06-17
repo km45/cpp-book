@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-04-functions/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-09-function-objects/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.4. 関数 - ゼロから学ぶ C++</title>
+        <title>2.9. 関数オブジェクト - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.4. 関数
+              2.9. 関数オブジェクト
             </span>
           
         </div>
@@ -358,6 +358,66 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-nav__link">
+      2.4. ポインタ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-05-comments/" title="2.5. コメント" class="md-nav__link">
+      2.5. コメント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-06-control-flow/" title="2.6. 制御文" class="md-nav__link">
+      2.6. 制御文
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-07-operators/" title="2.7. 演算子" class="md-nav__link">
+      2.7. 演算子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-08-functions/" title="2.8. 関数" class="md-nav__link">
+      2.8. 関数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -369,11 +429,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.4. 関数
+        2.9. 関数オブジェクト
       </label>
     
-    <a href="./" title="2.4. 関数" class="md-nav__link md-nav__link--active">
-      2.4. 関数
+    <a href="./" title="2.9. 関数オブジェクト" class="md-nav__link md-nav__link--active">
+      2.9. 関数オブジェクト
     </a>
     
       
@@ -387,29 +447,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
-    プロトタイプ宣言
+  <a href="#_2" title="関数ポインタ" class="md-nav__link">
+    関数ポインタ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main" title="main関数" class="md-nav__link">
-    main関数
+  <a href="#_3" title="ラムダ式" class="md-nav__link">
+    ラムダ式
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="キャプチャ" class="md-nav__link">
+    キャプチャ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="引数リスト" class="md-nav__link">
+    引数リスト
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="戻り値の型の省略" class="md-nav__link">
+    戻り値の型の省略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
-    コマンドライン引数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="オーバーロード" class="md-nav__link">
-    オーバーロード
+  <a href="#stdfunction" title="std::function" class="md-nav__link">
+    std::function
   </a>
   
 </li>
@@ -422,54 +502,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-05-pointers/" title="2.5. ポインタ" class="md-nav__link">
-      2.5. ポインタ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-06-comments/" title="2.6. コメント" class="md-nav__link">
-      2.6. コメント
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-07-control-flow/" title="2.7. 制御文" class="md-nav__link">
-      2.7. 制御文
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ch02-08-operators/" title="2.8. 演算子" class="md-nav__link">
-      2.8. 演算子
-    </a>
   </li>
 
         
@@ -1207,29 +1239,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="プロトタイプ宣言" class="md-nav__link">
-    プロトタイプ宣言
+  <a href="#_2" title="関数ポインタ" class="md-nav__link">
+    関数ポインタ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main" title="main関数" class="md-nav__link">
-    main関数
+  <a href="#_3" title="ラムダ式" class="md-nav__link">
+    ラムダ式
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="キャプチャ" class="md-nav__link">
+    キャプチャ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="引数リスト" class="md-nav__link">
+    引数リスト
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="戻り値の型の省略" class="md-nav__link">
+    戻り値の型の省略
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="コマンドライン引数" class="md-nav__link">
-    コマンドライン引数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="オーバーロード" class="md-nav__link">
-    オーバーロード
+  <a href="#stdfunction" title="std::function" class="md-nav__link">
+    std::function
   </a>
   
 </li>
@@ -1250,209 +1302,136 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-04-functions.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-09-function-objects.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">関数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>C++での関数の使用方法について説明します。</p>
-<p>関数<code>HelloWorld()</code>を作成し、<code>main()</code>から呼び出して利用する場合は次のようにします。</p>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="hll">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="hll">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span class="hll">    <span class="p">}</span>
-</span><span class="hll"><span class="p">}</span>
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<p>ここで注目すべき点は、関数<code>HelloWorld()</code>が、呼び出されている10行目より上の行で記述されている点です。
-コンパイラはソースコードを上から順に解釈しているため、コンパイラに対して<code>HelloWorld()</code>が何者なのかを事前に教えることで、<code>HelloWorld()</code>の関数呼び出しが行なえるようになります。</p>
-<p>試しに<code>HelloWorld()</code>を<code>main()</code>よりも下の行に記述すると、コンパイルに失敗します。</p>
-<div class="admonition failure">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="hll">    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// ここでコンパイルエラー</span>
-</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<p>4行目の時点では、<code>HelloWorld()</code>が何者なのかコンパイラには理解できないためです。</p>
-<h2 id="_2">プロトタイプ宣言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>関数の宣言のみを呼び出し箇所よりも上の行に記述することで、関数の存在をコンパイラに教えることが出来ます。
-これをプロトタイプ宣言（前方宣言）と呼びます。</p>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="hll"><span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>  <span class="c1">// プロトタイプ宣言（前方宣言）</span>
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">HelloWorld</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">HelloWorld</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] &quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<p><code>HelloWorld()</code>の本体は<code>main()</code>の呼び出し箇所よりも下に記述されていますが、プロトタイプ宣言があることで問題なくコンパイルできます。</p>
-<h2 id="main">main関数<a class="headerlink" href="#main" title="Permanent link">&para;</a></h2>
-<p>これまでのサンプルコードで度々現れた<code>main()</code>をmain関数と呼びます。</p>
-<p>C++で生成された実行ファイルを実行すると、main関数を起点に処理が進みます。</p>
-<h2 id="_3">コマンドライン引数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>main関数にも引数を渡すことが可能です。main関数に渡される引数をコマンドライン引数と呼びます。
-コマンドライン引数は、プログラム実行時に実行ファイル名に続けて半角スペース区切りで複数指定することが出来ます。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 実行ファイル名 &lt;引数1&gt; &lt;引数2&gt; &lt;引数3&gt; ...</span>
-$ ./a.exe XXX YYY ZZZ
+                <h1 id="_1">関数オブジェクト<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">関数ポインタ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>関数を指し示すポインタを作成する場合は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 戻り値の型 (*変数名)(引数の型);</span>
+<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">f1</span><span class="p">)(</span><span class="kt">double</span><span class="p">);</span>    <span class="c1">// double を引数として int を返す関数のポインタ f1</span>
+<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">f2</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="c1">// 2つの int を引数として int を返す関数のポインタ f2</span>
 </pre></div>
 
-<p>コマンドライン引数を受け取る場合、main関数の引数は次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[]);</span>
-</pre></div>
+<p>関数ポインタには、戻り値の型と引数の型・数・順番が一致している関数のアドレスが代入可能です。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<ul>
-<li><code>int argc</code>: コマンドライン引数の個数を表す</li>
-<li><code>char* argv[]</code>: コマンドライン引数が格納される</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;argv[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
-</div>
-<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
-$ ./a.exe Hello World!
-argv<span class="o">[</span><span class="m">0</span><span class="o">]</span>: ./a.exe
-argv<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Hello
-argv<span class="o">[</span><span class="m">2</span><span class="o">]</span>: World!
-</pre></div>
-
-<h2 id="_4">オーバーロード<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>関数の引数の個数や型が異なる場合、同じ名前の関数を定義することが出来ます。
-これを（関数の）オーバーロードと呼びます。引数の個数や型の情報を元に呼び出す関数を決定しています。</p>
-<div class="admonition example">
-<p class="admonition-title">main.cc</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;int: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;double: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Print</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-    <span class="n">Print</span><span class="p">(</span><span class="mf">2.1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fp</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>  <span class="c1">// 関数 Add のアドレスを保持する関数ポインタ fp</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fp</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>      <span class="c1">// 関数ポインタ fp を介して関数 Add が実行される</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 8</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table>
 
-</div>
-<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
-$ ./a.exe
-int: <span class="m">2</span>
-double: <span class="m">2</span>.1
+<p>関数ポインタを変数に代入する際は、 <code>auto</code> を使うことで複雑な関数ポインタの型を書く必要が無くなり簡潔になります。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="_3">ラムダ式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>ラムダ式は、簡潔に関数オブジェクトを記述するための式です。
+ラムダ式で生成される関数オブジェクトは <code>auto</code> で保持することが出来ます。</p>
+<p>ラムダ式の構文は次のようになります。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// auto 変数名 = [ キャプチャ ]( 引数リスト ) -&gt; 戻り値の型 { 処理内容 };</span>
+<span class="k">auto</span> <span class="n">func</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// int を2つ受け取り、足した結果を返すラムダ式</span>
+
+<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 10</span>
+</pre></div>
+
+<h3 id="_4">キャプチャ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>ラムダ式の外にある変数をラムダ式の中で使用する場合は、
+ラムダ式先頭の <code>[]</code> 内でキャプチャと呼ばれるものの指定が必要です。</p>
+<p>キャプチャには、コピーキャプチャと参照キャプチャの2種類が存在します。</p>
+<table>
+<thead>
+<tr>
+<th align="center">記述例</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>[=]</code></td>
+<td>ラムダ式定義時に存在する全ての変数をコピーしてラムダ式の中で使う</td>
+</tr>
+<tr>
+<td align="center"><code>[&amp;]</code></td>
+<td>ラムダ式定義時に存在する全ての変数を参照してラムダ式の中で使う</td>
+</tr>
+<tr>
+<td align="center"><code>[a]</code></td>
+<td>変数 <code>a</code> をコピーしてラムダ式の中で使う</td>
+</tr>
+<tr>
+<td align="center"><code>[&amp;a]</code></td>
+<td>変数 <code>a</code> を参照してラムダ式の中で使う</td>
+</tr>
+<tr>
+<td align="center"><code>[&amp;a, b]</code></td>
+<td>変数 <code>a</code> は参照し、変数 <code>b</code> はコピーしてラムダ式の中で使う</td>
+</tr>
+<tr>
+<td align="center"><code>[=, &amp;a]</code></td>
+<td>変数 <code>a</code> は参照し、それ以外はコピーしてラムダ式の中で使う</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">init</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="c1">// キャプチャを指定することで {} 内で変数 init を使うことができる</span>
+<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">init</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">init</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>   <span class="c1">// コピーキャプチャ</span>
+<span class="k">auto</span> <span class="n">g</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">init</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">init</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// 参照キャプチャ</span>
+
+<span class="n">init</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// 【コピーキャプチャの場合】</span>
+<span class="c1">//    ラムダ式の定義時点で init がコピーされているので、ラムダ式内の init は 5</span>
+<span class="kt">int</span> <span class="n">result_copy</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result_copy</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 13</span>
+
+<span class="c1">// 【参照キャプチャの場合】</span>
+<span class="c1">//    ラムダ式実行時の init の値が参照されるので、ラムダ式内の init は 0</span>
+<span class="kt">int</span> <span class="n">result_ref</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result_ref</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>   <span class="c1">// 8</span>
+</pre></div>
+
+<h3 id="_5">引数リスト<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>( 引数リスト )</code> は、通常の関数と同じように記述することが出来ます。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">func1</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// int を引数とする</span>
+<span class="k">auto</span> <span class="n">func2</span> <span class="o">=</span> <span class="p">[]()</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">400</span><span class="p">;</span> <span class="p">};</span>         <span class="c1">// 引数なし</span>
+<span class="k">auto</span> <span class="n">func3</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">400</span><span class="p">;</span> <span class="p">};</span>                  <span class="c1">// 戻り値の型の記述を省略した場合、 () ごと省略可能</span>
+</pre></div>
+
+<h3 id="_6">戻り値の型の省略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>-&gt; 戻り値の型</code> は、 ラムダ式内の型推論に任せる場合は省略可能です。</p>
+<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">func</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// a, b は共に int なので、戻り値も int と推論される</span>
+</pre></div>
+
+<h2 id="stdfunction">std::function<a class="headerlink" href="#stdfunction" title="Permanent link">&para;</a></h2>
+<p><code>std::function</code> で関数ポインタやラムダ式を保持することが出来ます。
+<code>std::function</code> を使うことで、関数ポインタのような複雑な構文が簡潔になるという利点もあります。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>  <span class="c1">// std::function&lt;戻り値の型(引数の型)&gt; 変数名</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>                  <span class="c1">// f を介して関数 Add が実行される</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 8</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// ラムダ式も保持可能</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>       <span class="c1">// 28</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
                 
                   
@@ -1474,7 +1453,7 @@ double: <span class="m">2</span>.1
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-03-literals/" title="2.3. リテラル" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch02-08-functions/" title="2.8. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1483,19 +1462,19 @@ double: <span class="m">2</span>.1
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.3. リテラル
+                2.8. 関数
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-05-pointers/" title="2.5. ポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch03-01-arrays/" title="3.1. 配列" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.5. ポインタ
+                3.1. 配列
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

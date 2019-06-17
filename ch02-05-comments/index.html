@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-05-pointers/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch02-05-comments/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>2.5. ポインタ - ゼロから学ぶ C++</title>
+        <title>2.5. コメント - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              2.5. ポインタ
+              2.5. コメント
             </span>
           
         </div>
@@ -360,8 +360,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-04-functions/" title="2.4. 関数" class="md-nav__link">
-      2.4. 関数
+    <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-nav__link">
+      2.4. ポインタ
     </a>
   </li>
 
@@ -380,73 +380,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2.5. ポインタ
-      </label>
-    
-    <a href="./" title="2.5. ポインタ" class="md-nav__link md-nav__link--active">
-      2.5. ポインタ
+    <a href="./" title="2.5. コメント" class="md-nav__link md-nav__link--active">
+      2.5. コメント
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nullptr" title="nullptr" class="md-nav__link">
-    nullptr
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="デリファレンス（逆参照）" class="md-nav__link">
-    デリファレンス（逆参照）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#const" title="constポインタ" class="md-nav__link">
-    constポインタ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="参照" class="md-nav__link">
-    参照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="関数ポインタ" class="md-nav__link">
-    関数ポインタ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdfunction" title="std::function" class="md-nav__link">
-    std::function
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -457,8 +393,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-06-comments/" title="2.6. コメント" class="md-nav__link">
-      2.6. コメント
+    <a href="../ch02-06-control-flow/" title="2.6. 制御文" class="md-nav__link">
+      2.6. 制御文
     </a>
   </li>
 
@@ -469,8 +405,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-07-control-flow/" title="2.7. 制御文" class="md-nav__link">
-      2.7. 制御文
+    <a href="../ch02-07-operators/" title="2.7. 演算子" class="md-nav__link">
+      2.7. 演算子
     </a>
   </li>
 
@@ -481,8 +417,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../ch02-08-operators/" title="2.8. 演算子" class="md-nav__link">
-      2.8. 演算子
+    <a href="../ch02-08-functions/" title="2.8. 関数" class="md-nav__link">
+      2.8. 関数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ch02-09-function-objects/" title="2.9. 関数オブジェクト" class="md-nav__link">
+      2.9. 関数オブジェクト
     </a>
   </li>
 
@@ -1217,57 +1165,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nullptr" title="nullptr" class="md-nav__link">
-    nullptr
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="デリファレンス（逆参照）" class="md-nav__link">
-    デリファレンス（逆参照）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#const" title="constポインタ" class="md-nav__link">
-    constポインタ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="参照" class="md-nav__link">
-    参照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="関数ポインタ" class="md-nav__link">
-    関数ポインタ
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#stdfunction" title="std::function" class="md-nav__link">
-    std::function
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1278,105 +1175,30 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-05-pointers.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch02-05-comments.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">ポインタ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ポインタというのは他の変数を参照する仕組みの1つです。
-Windows のショートカットや Linux のシンボリックリンクと同じような機能です。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+                <h1 id="_1">コメント<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>ソースコード内にコメントを書きたい場合は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// &#39;//&#39; で始まる行はコメントと見なされます</span>
+
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="c1">// このように</span>
+<span class="c1">// 複数行にまたがって</span>
+<span class="c1">// コメントを書くこともできます</span>
 </pre></div>
 
-<p><code>int*</code> と書くと <code>int</code> 型の変数を指すポインタ型となります。
-<code>&amp;x</code> というのは <code>x</code> を指すポインタを得るための演算です。</p>
-<h2 id="nullptr">nullptr<a class="headerlink" href="#nullptr" title="Permanent link">&para;</a></h2>
-<p>どの変数も参照していないポインタのことをヌルポインタと呼びます。C++ではヌルポインタを表すキーワードとして <code>nullptr</code> が用意されています。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<p><code>/* ... */</code> で囲まれた行もコメントと見なされます。
+複数行にまたがるコメントを書く時に便利です。</p>
+<div class="codehilite"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * 間に現れる &#39;*&#39; は書かなくてもいいですが</span>
+<span class="cm"> * 習慣的に書くことのほうが多いです</span>
+<span class="cm"> */</span>
 </pre></div>
 
-<h2 id="_2">デリファレンス（逆参照）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ポインタが指す変数の値を参照するには次のように書きます。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
-</pre></div>
-
-<p>変数からポインタを得るときには <code>&amp;</code> を付け、ポインタから値を得るには <code>*</code> を付けます。</p>
-<h2 id="const">constポインタ<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
-<p>ポインタ型に <code>const</code> を付ける場合、 <code>const</code> の付ける位置によって意味合いが変わります。</p>
-<p><code>*</code> の前に <code>const</code> を付けると、ポインタが指し示す値を書き換えることができなくなります。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span> <span class="c1">// エラー</span>
-</pre></div>
-
-<p><code>*</code> の後に <code>const</code> を付けると、ポインタ自身を書き換えることができなくなります。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-<span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span> <span class="c1">// エラー</span>
-</pre></div>
-
-<p>併用することも可能です。</p>
-<div class="codehilite"><pre><span></span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</pre></div>
-
-<h2 id="_3">参照<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>ポインタに似た仕組みとして参照があります。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// pはポインタ型</span>
-<span class="kt">int</span><span class="o">&amp;</span> <span class="n">r</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// rは参照型</span>
-
-<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
-</pre></div>
-
-<p><code>int&amp;</code> と書くと <code>int</code> の参照型となります。</p>
-<p>ポインタが指し示す値を扱うには <code>*</code> を付けてデリファレンスする必要がありますが、
-参照では何も付与する必要がないため、見た目上では値型のように使うことが出来ます。</p>
-<h2 id="_4">関数ポインタ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>関数を指し示すポインタを作成する場合は次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="c1">// 戻り値の型 (*変数名)(引数の型);</span>
-<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">f1</span><span class="p">)(</span><span class="kt">double</span><span class="p">);</span>    <span class="c1">// double を引数として int を返す関数のポインタ f1</span>
-<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">f2</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>  <span class="c1">// 2つの int を引数として int を返す関数のポインタ f2</span>
-</pre></div>
-
-<p>関数ポインタには、戻り値の型と引数の型・数・順番が一致している関数のアドレスが代入可能です。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">fp</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>  <span class="c1">// 関数 Add のアドレスを保持する関数ポインタ fp</span>
-    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">fp</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>      <span class="c1">// 関数ポインタ fp を介して関数 Add が実行される</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 8</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
-<p>関数ポインタを変数に代入する際は、 <code>auto</code> を使うことで複雑な関数ポインタの型を書く必要が無くなり簡潔になります。</p>
-<div class="codehilite"><pre><span></span><span class="k">auto</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>
-</pre></div>
-
-<h2 id="stdfunction">std::function<a class="headerlink" href="#stdfunction" title="Permanent link">&para;</a></h2>
-<p>関数ポインタは文法が複雑なため一見しただけでは分かりづらいですが、
-<code>std::function</code> を利用することで、簡潔に書くことが出来ます。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Add</span><span class="p">;</span>  <span class="c1">// std::function&lt;戻り値の型(引数の型)&gt; 変数名</span>
-    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>                  <span class="c1">// f を介して関数 Add が実行される</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 8</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<p><code>/* ... */</code> は入れ子にして使うことはできないので注意して下さい。</p>
+<div class="codehilite"><pre><span></span><span class="cm">/* /* これは不正なコメントです */</span> <span class="err">*/</span>
 </pre></div>
                 
                   
@@ -1398,7 +1220,7 @@ Windows のショートカットや Linux のシンボリックリンクと同�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch02-04-functions/" title="2.4. 関数" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch02-04-pointers/" title="2.4. ポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1407,19 +1229,19 @@ Windows のショートカットや Linux のシンボリックリンクと同�
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2.4. 関数
+                2.4. ポインタ
               </span>
             </div>
           </a>
         
         
-          <a href="../ch02-06-comments/" title="2.6. コメント" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch02-06-control-flow/" title="2.6. 制御文" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2.6. コメント
+                2.6. 制御文
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
