@@ -1289,7 +1289,14 @@
                 
                 <h1 id="_1">デストラクタ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>オブジェクトを破棄する際に呼び出されるメンバ関数をデストラクタといいます。
-デストラクタはリソースの開放を行うために使用します。</p>
+デストラクタはリソースの解放を行うために使用します。</p>
+<details class="tip"><summary>RAII (Resource Acquisition Is Initialization)</summary><p>C++ では <a href="https://ja.wikipedia.org/wiki/ガベージコレクション">ガベージコレクション</a> の代わりにデストラクタによってリソース解放を行います。
+デストラクタによるリソース解放のタイミングは明示的であるため、
+C++ ではデフォルトで <a href="https://ja.wikipedia.org/wiki/RAII">RAII</a> が適用されます。</p>
+<p>デストラクタを持たずに RAII を実現できる言語もありますが、
+一般に何らかの明示的な処理を必要とします。</p>
+<p>たとえば Python では明示的に with 文を使用する必要があります。</p>
+</details>
 <p><code>~</code> にクラス名をつけた名前で戻り値がない関数がデストラクタになります。
 デストラクタは引数をもちません。</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>

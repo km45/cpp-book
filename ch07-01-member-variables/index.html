@@ -1231,6 +1231,35 @@
 <span class="n">r</span><span class="p">.</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="n">r</span><span class="p">.</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
 </pre></div>
+
+<p>クラスのオブジェクトをポインタで扱う場合に、メンバ変数を参照するには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">rectangle</span><span class="p">;</span>
+<span class="n">Rectangle</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">rectangle</span><span class="p">;</span>
+<span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">).</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">).</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+
+<p>括弧をつけずに <code>*r.height_</code> とすると意味が変わってコンパイルエラーとなります。</p>
+<p>この記述方法は不便なため <code>(*r).</code> の代わりに <code>r-&gt;</code> と記述することができます。</p>
+<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">rectangle</span><span class="p">;</span>
+<span class="n">Rectangle</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">rectangle</span><span class="p">;</span>
+<span class="n">r</span><span class="o">-&gt;</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">r</span><span class="o">-&gt;</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+
+<details class="question"><summary>コンパイルエラーになる理由</summary><p>演算子の優先順位が原因です。</p>
+<p>演算子には優先順位があります。
+たとえば加算 <code>+</code> と乗算 <code>*</code> では乗算 <code>*</code> を優先することになっているため、
+<code>1 + 2 * 3</code> は <code>1 + (2 * 3)</code> と解釈されて結果は <code>7</code> になります。
+<code>(1 + 2) * 3)</code> の結果である <code>9</code> にはなりません。</p>
+<p>デリファレンスの <code>*</code> とメンバ変数参照の <code>.</code> では
+メンバ変数参照の <code>.</code> を優先することになっているため、
+<code>*r.height_</code> は <code>*(r.height_)</code> と解釈されます。
+しかしながら <code>r</code> の型である <code>std::unique_ptr&lt;Rectangle&gt;</code> には
+<code>height_</code> というメンバ変数はないためコンパイルエラーとなります。</p>
+<p>詳細は <a href="https://ja.cppreference.com/w/cpp/language/operator_precedence">C++の演算子の優先順位 - cppreference.com</a>
+を参照してください。</p>
+</details>
                 
                   
                 
