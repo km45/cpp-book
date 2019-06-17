@@ -743,6 +743,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="右辺値参照" class="md-nav__link">
+    右辺値参照
+  </a>
+  
+</li>
+      
       
       
       
@@ -1232,6 +1239,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="右辺値参照" class="md-nav__link">
+    右辺値参照
+  </a>
+  
+</li>
+      
       
       
       
@@ -1301,6 +1315,39 @@ C++11 以降、コンパイラはこの考え方を認識し、ムーブを実�
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="c1">// std::move で x を右辺値にキャスト</span>
 
 <span class="c1">// 以降、xは利用しない</span>
+</pre></div>
+
+<h2 id="_4">右辺値参照<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>右辺値を参照するには <code>&amp;&amp;</code> を付けます。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span><span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+
+<p>左辺値の参照と右辺値の参照は別の型として扱われるため、
+オーバーロードの仕組みを利用することで、引数が左辺値参照の時と右辺値参照の時で処理を分けることが可能です。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;左辺値参照&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;右辺値参照&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&quot;hoge&quot;</span><span class="p">;</span>
+
+    <span class="n">Print</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+    <span class="n">Print</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">str</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># 実行結果</span>
+左辺値参照
+右辺値参照
 </pre></div>
                 
                   
