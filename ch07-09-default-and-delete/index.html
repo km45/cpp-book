@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch05-02-file-operations/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-09-default-and-delete/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>5.2. ファイル操作 - ゼロから学ぶ C++</title>
+        <title>7.9. default/delete - ゼロから学ぶ C++</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#defaultdelete" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              5.2. ファイル操作
+              7.9. default/delete
             </span>
           
         </div>
@@ -589,12 +589,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       5. ストリーム操作
@@ -622,56 +620,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        5.2. ファイル操作
-      </label>
-    
-    <a href="./" title="5.2. ファイル操作" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch05-02-file-operations/" title="5.2. ファイル操作" class="md-nav__link">
       5.2. ファイル操作
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="ファイル読み込み" class="md-nav__link">
-    ファイル読み込み
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="ファイル書き出し" class="md-nav__link">
-    ファイル書き出し
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -768,10 +721,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       7. クラス
@@ -883,11 +838,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch07-09-default-and-delete/" title="7.9. default/delete" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7.9. default/delete
+      </label>
+    
+    <a href="./" title="7.9. default/delete" class="md-nav__link md-nav__link--active">
       7.9. default/delete
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default" title="default 指定" class="md-nav__link">
+    default 指定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" title="delete 指定" class="md-nav__link">
+    delete 指定
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1241,15 +1241,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="ファイル読み込み" class="md-nav__link">
-    ファイル読み込み
+  <a href="#default" title="default 指定" class="md-nav__link">
+    default 指定
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="ファイル書き出し" class="md-nav__link">
-    ファイル書き出し
+  <a href="#delete" title="delete 指定" class="md-nav__link">
+    delete 指定
   </a>
   
 </li>
@@ -1270,110 +1270,61 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch05-02-file-operations.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-09-default-and-delete.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">ファイル操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><code>&lt;fstream&gt;</code> に用意されているクラスを使うことでファイルの操作が出来ます。</p>
-<h2 id="_2">ファイル読み込み<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ファイルを読み込む場合は <code>std::ifstream</code> を使います。
-<code>&lt;string&gt;</code> に用意されている <code>std::getline</code> で1行ずつ読み込むことが出来ます。</p>
-<div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">main.cc</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+                <h1 id="defaultdelete">default/delete<a class="headerlink" href="#defaultdelete" title="Permanent link">&para;</a></h1>
+<p>以下のメンバ関数は暗黙的に定義されることがある特別なメンバ関数です。</p>
+<ul>
+<li>デフォルトコンストラクタ</li>
+<li>コピーコンストラクタ</li>
+<li>コピー代入演算子</li>
+<li>ムーブコンストラクタ</li>
+<li>ムーブ代入演算子</li>
+<li>デストラクタ</li>
+</ul>
+<p>これらに対する指定として <code>default</code> 指定と <code>delete</code> 指定があります。</p>
+<h2 id="default">default 指定<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
+<p>暗黙的に定義される特別なメンバ関数に <code>= default</code> をつけることで、
+暗黙的に定義されるものと同じものを明示的に定義できます。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Square</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="k">explicit</span> <span class="n">Square</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="o">:</span> <span class="n">size_</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="p">{}</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">);</span>  <span class="c1">// 読み込むファイルのパスを指定</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">line</span><span class="p">;</span>
-
-    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// 1行ずつ読み込む</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">line</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="c1">// デフォルトコンストラクタ以外のコンストラクタが存在するので</span>
+    <span class="c1">// デフォルトコンストラクタの暗黙的な定義は行われない。</span>
+    <span class="c1">// デフォルトコンストラクタを使用するために default 指定で明示的に定義</span>
+<span class="hll">    <span class="n">Square</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span>
+    <span class="kt">int</span> <span class="nf">Area</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">size_</span> <span class="o">*</span> <span class="n">size_</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">file.txt</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
-To dig the dust enclosed here.
-Blest be the man that spares these stones,
-And cursed be he that moves my bones.
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_2" />
-<label for="__tab_1_2">実行結果</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
-To dig the dust enclosed here.
-Blest be the man that spares these stones,
-And cursed be he that moves my bones.
-</pre></div></div>
-</div>
-<h2 id="_3">ファイル書き出し<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>ファイルへ書き出す場合は <code>std::ofstream</code> を使います。</p>
-<div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">main.cc</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+ <span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">size_</span><span class="p">;</span>
+<span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;fruits.txt&quot;</span><span class="p">);</span>  <span class="c1">// 書き出すファイルのパスを指定</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;apple&quot;</span><span class="p">,</span> <span class="s">&quot;strawberry&quot;</span><span class="p">,</span> <span class="s">&quot;pear&quot;</span><span class="p">,</span> <span class="s">&quot;grape&quot;</span> <span class="p">};</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">fruit</span> <span class="p">:</span> <span class="n">fruits</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">fruit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 書き出し</span>
-    <span class="p">}</span>
+    <span class="n">Square</span> <span class="n">s1</span><span class="p">;</span>
+    <span class="n">Square</span> <span class="n">s2</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">プログラム実行後のfruits.txt</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>apple
-strawberry
-pear
-grape
-</pre></div></div>
-</div>
-<p>書き出す前に、既に同名のファイルが存在していた場合、中身は上書きされます。
-上書きせずに追記する場合は、コンストラクタの引数に <code>std::ios::app</code> を追加します。</p>
-<div class="superfences-tabs">
-<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
-<label for="__tab_3_0">main.cc</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;fstream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+</pre></div>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="hll">    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">file</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>
-</span>    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">quotation</span><span class="p">(</span><span class="s">&quot;--- William Shakespeare&#39;s Epitaph&quot;</span><span class="p">);</span>
+<h2 id="delete">delete 指定<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>暗黙的に定義される特別なメンバ関数に <code>= delete</code> をつけることで、
+暗黙的に定義される特別なメンバ関数の削除を指定します。</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">NonCopyable</span> <span class="p">{</span>
+ <span class="k">public</span><span class="o">:</span>
+    <span class="n">NonCopyable</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
 
-    <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">quotation</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div></div>
-<input name="__tabs_3" type="radio" id="__tab_3_1" />
-<label for="__tab_3_1">プログラム実行前のfile.txt</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
-To dig the dust enclosed here.
-Blest be the man that spares these stones,
-And cursed be he that moves my bones.
-</pre></div></div>
-<input name="__tabs_3" type="radio" id="__tab_3_2" />
-<label for="__tab_3_2">プログラム実行後のfile.txt</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>Good friend, for Jesus&#39; sake forbear,
-To dig the dust enclosed here.
-Blest be the man that spares these stones,
-And cursed be he that moves my bones.
---- William Shakespeare&#39;s Epitaph
-</pre></div></div>
-</div>
+    <span class="c1">// 暗黙的に定義されるコピーコンストラクタとコピー代入演算子を</span>
+    <span class="c1">// 削除することでコピー禁止クラスを実現できる</span>
+<span class="hll">    <span class="n">NonCopyable</span><span class="p">(</span><span class="k">const</span> <span class="n">NonCopyable</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span><span class="hll">    <span class="n">NonCopyable</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">NonCopyable</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span><span class="p">};</span>
+</pre></div>
                 
                   
                 
@@ -1394,7 +1345,7 @@ And cursed be he that moves my bones.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch05-01-standard-inout/" title="5.1. 標準入出力" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch07-08-assignment-operator/" title="7.8. 代入演算子" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1403,19 +1354,19 @@ And cursed be he that moves my bones.
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                5.1. 標準入出力
+                7.8. 代入演算子
               </span>
             </div>
           </a>
         
         
-          <a href="../ch06-01-memory-areas/" title="6.1. メモリ領域" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch07-10-static-members/" title="7.10. static メンバ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                6.1. メモリ領域
+                7.10. static メンバ
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -181,12 +181,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch07-09-static-members/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch07-09-default-and-delete/</loc>
      <lastmod>2019-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://rinatz.github.io/cpp-book/ch07-10-structs/</loc>
+     <loc>http://rinatz.github.io/cpp-book/ch07-10-static-members/</loc>
+     <lastmod>2019-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://rinatz.github.io/cpp-book/ch07-11-structs/</loc>
      <lastmod>2019-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
