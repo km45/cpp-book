@@ -358,6 +358,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#constexpr" title="constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="型推論" class="md-nav__link">
     型推論
   </a>
@@ -1236,6 +1243,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#constexpr" title="constexpr" class="md-nav__link">
+    constexpr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="型推論" class="md-nav__link">
     型推論
   </a>
@@ -1285,6 +1299,12 @@
 <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// エラー</span>
 </pre></div>
 
+<h2 id="constexpr">constexpr<a class="headerlink" href="#constexpr" title="Permanent link">&para;</a></h2>
+<p><code>constexpr</code> を付けると定数にできます。</p>
+<div class="codehilite"><pre><span></span><span class="k">constexpr</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
+
+<p><code>const</code> の値は実行時に決定しますが <code>constexpr</code> の値はコンパイル時に決定します。</p>
 <h2 id="_2">型推論<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>変数の宣言時には明示的に型を指定しなくても <code>auto</code> を使うと
 右辺の値から型を推論することができます。</p>
