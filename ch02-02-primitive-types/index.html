@@ -405,15 +405,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" title="浮動小数点型" class="md-nav__link">
+    浮動小数点型
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="浮動小数点型" class="md-nav__link">
-    浮動小数点型
+  <a href="#_7" title="列挙型" class="md-nav__link">
+    列挙型
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enum" title="enum" class="md-nav__link">
+    enum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1288,15 +1308,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" title="浮動小数点型" class="md-nav__link">
+    浮動小数点型
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="浮動小数点型" class="md-nav__link">
-    浮動小数点型
+  <a href="#_7" title="列挙型" class="md-nav__link">
+    列挙型
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enum" title="enum" class="md-nav__link">
+    enum
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1377,7 +1417,7 @@ GCC では 8, 16, 32, 64 ビットで定義されています。
 <span class="kt">int32_t</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 
-<h2 id="_6">浮動小数点型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_6">浮動小数点型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>小数を表現する型は次の2つの型があります。</p>
 <ul>
 <li><code>float</code></li>
@@ -1386,6 +1426,67 @@ GCC では 8, 16, 32, 64 ビットで定義されています。
 <p><code>float</code> は 32 ビットの大きさを持ち、<code>double</code> は 64 ビットの大きさを持ちます。
 また <code>double</code> の方が <code>float</code> に比べて計算精度が高いですが数値計算の
 パフォーマンスは低いです。</p>
+<h2 id="_7">列挙型<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>列挙型は、名前を付けた定数（列挙子）の集合を扱う型です。</p>
+<h3 id="enum">enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h3>
+<p>列挙型である <code>enum</code> を定義するには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="k">enum</span> <span class="n">Day</span> <span class="p">{</span>
+  <span class="n">Sun</span><span class="p">,</span>  <span class="c1">// 0</span>
+  <span class="n">Mon</span><span class="p">,</span>  <span class="c1">// 1</span>
+  <span class="n">Tue</span><span class="p">,</span>  <span class="c1">// 2</span>
+  <span class="n">Wed</span><span class="p">,</span>  <span class="c1">// 3</span>
+  <span class="n">Thu</span><span class="p">,</span>  <span class="c1">// 4</span>
+  <span class="n">Fri</span><span class="p">,</span>  <span class="c1">// 5</span>
+  <span class="n">Sat</span>   <span class="c1">// 6</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><code>enum</code> の各列挙子は、内部では整数として扱われています。
+各列挙子の定義の際に値を指定しなければ、 <code>0</code> から順に値が割り振られます。</p>
+<p><code>列挙子 = 整数</code> と書くことで値を指定することができます。値が指定された列挙子以降は、順に整数が割り振られます。</p>
+<div class="codehilite"><pre><span></span><span class="k">enum</span> <span class="n">Day</span> <span class="p">{</span>
+  <span class="n">Sun</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1">// 1</span>
+  <span class="n">Mon</span><span class="p">,</span>      <span class="c1">// 2</span>
+  <span class="n">Tue</span><span class="p">,</span>      <span class="c1">// 3</span>
+  <span class="n">Wed</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>  <span class="c1">// 8</span>
+  <span class="n">Thu</span><span class="p">,</span>      <span class="c1">// 9</span>
+  <span class="n">Fri</span><span class="p">,</span>      <span class="c1">// 10</span>
+  <span class="n">Sat</span>       <span class="c1">// 11</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><code>enum</code> を扱うには次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="n">Day</span> <span class="n">day</span> <span class="o">=</span> <span class="n">Fri</span><span class="p">;</span>
+</pre></div>
+
+<p>数値型に <code>enum</code> の値を代入することは可能ですが、 <code>enum</code> に数値を直接代入することは出来ません。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Fri</span><span class="p">;</span>  <span class="c1">// OK</span>
+<span class="n">Day</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// コンパイルエラー</span>
+</pre></div>
+
+<p>列挙子の名前は被らないようにする必要があります。</p>
+<div class="codehilite"><pre><span></span><span class="k">enum</span> <span class="n">Day</span> <span class="p">{</span>
+  <span class="n">Sun</span><span class="p">,</span>
+  <span class="n">Mon</span><span class="p">,</span>
+  <span class="n">Tue</span><span class="p">,</span>
+  <span class="n">Wed</span><span class="p">,</span>
+  <span class="n">Thu</span><span class="p">,</span>
+  <span class="n">Fri</span><span class="p">,</span>
+  <span class="n">Sat</span>
+<span class="p">};</span>
+
+<span class="k">enum</span> <span class="n">SolarSystem</span> <span class="p">{</span>
+  <span class="n">Sun</span><span class="p">,</span>  <span class="c1">// Sun は enum Day 内で定義済みのためコンパイルエラー</span>
+  <span class="n">Mercury</span><span class="p">,</span>
+  <span class="n">Venus</span><span class="p">,</span>
+  <span class="n">Earth</span><span class="p">,</span>
+  <span class="n">Mars</span><span class="p">,</span>
+  <span class="n">Jupiter</span><span class="p">,</span>
+  <span class="n">Saturn</span><span class="p">,</span>
+  <span class="n">Uranus</span><span class="p">,</span>
+  <span class="n">Neptune</span>
+<span class="p">};</span>
+</pre></div>
                 
                   
                 
