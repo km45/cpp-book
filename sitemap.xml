@@ -256,6 +256,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://rinatz.github.io/cpp-book/make-make/</loc>
+     <lastmod>2019-06-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://rinatz.github.io/cpp-book/appendix-malloc-and-free/</loc>
      <lastmod>2019-06-19</lastmod>
      <changefreq>daily</changefreq>
