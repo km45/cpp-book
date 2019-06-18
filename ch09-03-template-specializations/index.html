@@ -13,7 +13,7 @@
         <meta name="description" content="ゼロから学ぶ C++">
       
       
-        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch07-01-member-variables/">
+        <link rel="canonical" href="http://rinatz.github.io/cpp-book/ch09-03-template-specializations/">
       
       
         <meta name="author" content="井田 献一朗">
@@ -42,7 +42,7 @@
     
     
       
-        <title>7.1. メンバ変数 - ゼロから学ぶ C++</title>
+        <title>9.3. 特殊化 - ゼロから学ぶ C++</title>
       
     
     
@@ -133,7 +133,7 @@
               ゼロから学ぶ C++
             </span>
             <span class="md-header-nav__topic">
-              7.1. メンバ変数
+              9.3. 特殊化
             </span>
           
         </div>
@@ -721,12 +721,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       7. クラス
@@ -742,20 +740,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="7.1. メンバ変数" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ch07-01-member-variables/" title="7.1. メンバ変数" class="md-nav__link">
       7.1. メンバ変数
     </a>
-    
   </li>
 
         
@@ -936,10 +925,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       9. テンプレート
@@ -979,11 +970,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ch09-03-template-specializations/" title="9.3. 特殊化" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        9.3. 特殊化
+      </label>
+    
+    <a href="./" title="9.3. 特殊化" class="md-nav__link md-nav__link--active">
       9.3. 特殊化
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="完全特殊化" class="md-nav__link">
+    完全特殊化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="部分特殊化" class="md-nav__link">
+    部分特殊化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1249,6 +1285,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="完全特殊化" class="md-nav__link">
+    完全特殊化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="部分特殊化" class="md-nav__link">
+    部分特殊化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1259,55 +1318,199 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch07-01-member-variables.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/rinatz/cpp-book/edit/master/docs/ch09-03-template-specializations.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">メンバ変数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>クラスとは変数と関数を集約した型をつくるための仕組みです。</p>
-<p>クラスが持つ変数をメンバ変数といいます。</p>
-<p>長方形を扱う <code>Rectangle</code> クラスに
-<code>int</code> 型のメンバ変数 <code>height</code> と <code>width</code> を持たせるには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
+                <h1 id="_1">特殊化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>テンプレートでは実引数に応じて関数やクラスを生成します。</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 関数テンプレート</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 関数テンプレートの関数の呼び出し</span>
+<span class="n">Sum</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+
+<p><code>Sum&lt;int&gt;(1, 2)</code> という関数テンプレートの関数の呼び出しによって
+<code>T</code> が <code>int</code> である関数が必要と判断され、次の関数が生成されます。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>このようにテンプレートを使用する箇所において、
+関数テンプレートから関数を生成することおよび
+クラステンプレートからクラスを生成することを特殊化 (または暗黙的インスタンス化) といいます。</p>
+<p>特殊化はコンパイラによって行われるため、
+ヘッダファイルで関数テンプレートを使用する場合にはそのヘッダファイルで定義も行います。</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">sum.h</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#ifndef SUM_H_</span>
+<span class="cp">#define SUM_H_</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="n">T</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// inline 指定が必要</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#endif  </span><span class="c1">// SUM_H_</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">main.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;sum.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
+<details class="question"><summary>テンプレートの明示的インスタンス化</summary><p>テンプレートを使用する箇所で関数やクラスを生成する代わりに、
+ソースファイルで明示的に関数やクラスを生成することで
+ヘッダファイルでは宣言だけ行うことは可能ではあります。</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">sum.h</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#ifndef SUM_H_</span>
+<span class="cp">#define SUM_H_</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">);</span>  <span class="c1">// 宣言だけ行う (inline もつけない)</span>
+
+<span class="cp">#endif  </span><span class="c1">// SUM_H_</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">sum.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sum.h&quot;</span><span class="cp"></span>
+
+<span class="c1">// 関数テンプレートの定義</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">Sum</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 明示的インスタンス化</span>
+<span class="k">template</span> <span class="kt">int</span> <span class="n">Sum</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</pre></div></div>
+</div>
+<p>こうした構成にするとヘッダファイルでテンプレートが提供されていても
+使用可能な型はソースファイルで明示的な生成を行う型のみとなってしまいます。
+たとえば <code>Sum&lt;double&gt;(double, double)</code> は生成されていないため
+<code>Sum(1.2, 3.4)</code> のように関数テンプレートの関数を呼び出すとリンクエラーになります。</p>
+<p>こうした問題を避けるためには、
+ヘッダファイルでは関数テンプレートをやめてオーバーロードされた関数を提供し、
+ソースファイルで関数テンプレートを使用します。</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">sum.h</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#ifndef SUM_H_</span>
+<span class="cp">#define SUM_H_</span>
+
+<span class="kt">int</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<span class="kt">double</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="cp">#endif  </span><span class="c1">// SUM_H_</span>
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">sum.cc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sum.h&quot;</span><span class="cp"></span>
+
+<span class="c1">// 実装に関数テンプレートを使用</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">SumImpl</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SumImpl</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="n">Sum</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">SumImpl</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></div>
+</div>
+</details>
+<h2 id="_2">完全特殊化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>特殊化によって関数テンプレートやクラステンプレートから関数やクラスを生成する代わりに、
+通常の関数やクラスを使用するように指定することで
+特定のテンプレート引数に対する挙動を変更することができます。
+これを完全特殊化 (または明示的特殊化) といいます。</p>
+<p>関数テンプレートの完全特殊化は次のようにします。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">DoSomething</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hll"><span class="k">template</span> <span class="o">&lt;&gt;</span>
+</span><span class="hll"><span class="kt">double</span> <span class="n">DoSomething</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span><span class="hll"><span class="p">}</span>
+</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">DoSomething</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 5</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">DoSomething</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 6</span>
+</pre></div>
+
+<p>関数の前に <code>template &lt;&gt;</code> を付けて完全特殊化を行うことを指定し、
+関数名の後に <code>&lt; ... &gt;</code> で対象となるテンプレート引数を指定します。</p>
+<p>クラステンプレートの完全特殊化も同様です。</p>
+<div class="codehilite"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Array</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">height_</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width_</span><span class="p">;</span>
+    <span class="k">explicit</span> <span class="n">Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">size_</span><span class="p">(</span><span class="n">size</span><span class="p">),</span>
+          <span class="n">data_</span><span class="p">(</span><span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">size_</span><span class="p">])</span> <span class="p">{}</span>
+
+    <span class="o">~</span><span class="n">Array</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">data_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">Size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">size_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+ <span class="k">private</span><span class="o">:</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">size_</span><span class="p">;</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">data_</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="hll"><span class="k">template</span> <span class="o">&lt;&gt;</span>
+</span><span class="hll"><span class="k">class</span> <span class="nc">Array</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="p">{</span>
+</span> <span class="k">public</span><span class="o">:</span>
+    <span class="k">explicit</span> <span class="n">Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">size_</span><span class="p">(</span><span class="n">size</span><span class="p">),</span>
+          <span class="n">data_size_</span><span class="p">((</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="n">data_</span><span class="p">(</span><span class="k">new</span> <span class="kt">uint8_t</span><span class="p">[</span><span class="n">data_size_</span><span class="p">])</span> <span class="p">{}</span>
+
+    <span class="o">~</span><span class="n">Array</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">data_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">Size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">size_</span><span class="p">;</span>
+    <span class="p">}</span>
+
+ <span class="k">private</span><span class="o">:</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">size_</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">data_size_</span><span class="p">;</span>
+    <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">data_</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 
-<p>メンバ変数を参照するには <code>.</code> を使用します。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">r</span><span class="p">.</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-</pre></div>
-
-<p>クラスのオブジェクトをポインタで扱う場合に、メンバ変数を参照するには次のようにします。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">rectangle</span><span class="p">;</span>
-<span class="n">Rectangle</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">rectangle</span><span class="p">;</span>
-<span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">).</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">).</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-</pre></div>
-
-<p>括弧をつけずに <code>*r.height_</code> とすると意味が変わってコンパイルエラーとなります。</p>
-<p>この記述方法は不便なため <code>(*r).</code> の代わりに <code>r-&gt;</code> と記述することができます。</p>
-<div class="codehilite"><pre><span></span><span class="n">Rectangle</span> <span class="n">rectangle</span><span class="p">;</span>
-<span class="n">Rectangle</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">rectangle</span><span class="p">;</span>
-<span class="n">r</span><span class="o">-&gt;</span><span class="n">height_</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">r</span><span class="o">-&gt;</span><span class="n">width_</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-</pre></div>
-
-<details class="question"><summary>コンパイルエラーになる理由</summary><p>演算子の優先順位が原因です。</p>
-<p>演算子には優先順位があります。
-たとえば加算 <code>+</code> と乗算 <code>*</code> では乗算 <code>*</code> を優先することになっているため、
-<code>1 + 2 * 3</code> は <code>1 + (2 * 3)</code> と解釈されて結果は <code>7</code> になります。
-<code>(1 + 2) * 3)</code> の結果である <code>9</code> にはなりません。</p>
-<p>デリファレンスの <code>*</code> とメンバ変数参照の <code>.</code> では
-メンバ変数参照の <code>.</code> を優先することになっているため、
-<code>*r.height_</code> は <code>*(r.height_)</code> と解釈されます。
-しかしながら <code>r</code> の型である <code>std::unique_ptr&lt;Rectangle&gt;</code> には
-<code>height_</code> というメンバ変数はないためコンパイルエラーとなります。</p>
-<p>詳細は <a href="https://ja.cppreference.com/w/cpp/language/operator_precedence">C++の演算子の優先順位 - cppreference.com</a>
+<p>この例では8個の <code>bool</code> 値を1個の <code>uint8_t</code> で扱って省メモリ化するために、
+<code>bool</code> に対する完全特殊化を行っています。</p>
+<h2 id="_3">部分特殊化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>特定のテンプレート引数に対して
+特殊化で使用する関数テンプレートやクラステンプレートを別のテンプレートに変更することができます。
+これを部分特殊化といいます。</p>
+<p>詳細は
+<a href="https://ja.cppreference.com/w/cpp/language/partial_specialization">テンプレートの部分特殊化 - cppreference.com</a>
 を参照してください。</p>
-</details>
                 
                   
                 
@@ -1328,7 +1531,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ch06-05-smart-pointers/" title="6.5. スマートポインタ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ch09-02-class-templates/" title="9.2. クラステンプレート" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1337,19 +1540,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                6.5. スマートポインタ
+                9.2. クラステンプレート
               </span>
             </div>
           </a>
         
         
-          <a href="../ch07-02-member-functions/" title="7.2. メンバ関数" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ch10-01-exceptions/" title="10.1 例外処理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                7.2. メンバ関数
+                10.1 例外処理
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
